@@ -74,7 +74,6 @@ const ProgramStudiPage = () => {
         setFilteredPrograms(filtered);
     }, [activeTab, studyPrograms, searchQuery]);
 
-
     /**
      * Handle navigation untuk detail program studi
      */
@@ -123,7 +122,6 @@ const ProgramStudiPage = () => {
                 </div>
             </div>
 
-
             {/* Main Content - Normal padding */}
             <main className="py-6 sm:py-8 lg:py-12">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-24">
@@ -144,38 +142,24 @@ const ProgramStudiPage = () => {
                         {/* Tabs and Search Row */}
                         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-6 mb-6 lg:mb-8">
 
-                            {/* Tabs */}
-                            <div className="flex flex-wrap gap-2">
-                                <button
-                                    onClick={() => setActiveTab('D3')}
-                                    className={`px-4 lg:px-5 py-2.5 lg:py-3 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${activeTab === 'D3'
-                                        ? 'bg-[#1a81ca] text-white shadow-sm'
-                                        : 'border border-[#1a81ca] bg-white text-[#1a81ca] hover:bg-[#1a81ca] hover:text-white'
+                            {/* Tab Navigation dengan padding yang lebih baik */}
+                            <div className="inline-flex bg-gray-100 rounded-xl p-1.5">
+                                {['D3', 'S1', 'PROFESI'].map((level) => (
+                                    <button
+                                        key={level}
+                                        onClick={() => setActiveTab(level)}
+                                        className={`px-6 lg:px-8 py-3 mx-1 rounded-lg text-sm lg:text-base font-semibold transition-all duration-300 ${
+                                            activeTab === level
+                                                ? 'bg-[#1a81ca] text-white shadow-md'
+                                                : 'text-gray-600 hover:text-[#1a81ca]'
                                         }`}
-                                >
-                                    D3 - Diploma 3
-                                </button>
-                                <button
-                                    onClick={() => setActiveTab('S1')}
-                                    className={`px-4 lg:px-5 py-2.5 lg:py-3 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${activeTab === 'S1'
-                                        ? 'bg-[#1a81ca] text-white shadow-sm'
-                                        : 'border border-[#1a81ca] bg-white text-[#1a81ca] hover:bg-[#1a81ca] hover:text-white'
-                                        }`}
-                                >
-                                    S1 - Strata 1
-                                </button>
-                                <button
-                                    onClick={() => setActiveTab('PROFESI')}
-                                    className={`px-4 lg:px-5 py-2.5 lg:py-3 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${activeTab === 'PROFESI'
-                                        ? 'bg-[#1a81ca] text-white shadow-sm'
-                                        : 'border border-[#1a81ca] bg-white text-[#1a81ca] hover:bg-[#1a81ca] hover:text-white'
-                                        }`}
-                                >
-                                    Prof - Profesi
-                                </button>
+                                    >
+                                        {level === 'PROFESI' ? 'Profesi' : level}
+                                    </button>
+                                ))}
                             </div>
 
-                            {/* Search Box */}
+                            {/* Search Box dengan custom dropdown arrow */}
                             <div className="relative w-full sm:max-w-sm">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                     <svg className="h-4 w-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,7 +171,7 @@ const ProgramStudiPage = () => {
                                     placeholder="Cari program studi..."
                                     value={searchQuery}
                                     onChange={handleSearchChange}
-                                    className="w-full pl-10 pr-10 py-2.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a81ca] focus:border-transparent transition-all duration-200 bg-white text-gray-800 placeholder-gray-500"
+                                    className="w-full pl-10 pr-10 py-3 text-sm border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1a81ca] focus:border-[#1a81ca] transition-all duration-200 bg-white text-gray-800 placeholder-gray-500 font-medium"
                                 />
                                 {searchQuery && (
                                     <button
@@ -239,11 +223,11 @@ const ProgramStudiPage = () => {
                                 )}
                             </div>
                         ) : (
-                            <div className="space-y-4 lg:space-y-6">
+                            <div className="space-y-4">
                                 {filteredPrograms.map((program, index) => (
                                     <div
                                         key={program.id}
-                                        className={`border border-gray-200 rounded-lg p-4 lg:p-6 transform transition-all duration-300 hover:shadow-md hover:border-gray-300 hover:scale-[1.01] fade-in-up`}
+                                        className={`bg-white rounded-xl border-2 border-gray-200 p-6 hover:border-[#1a81ca] hover:shadow-lg transition-all duration-300 fade-in-up`}
                                         style={{
                                             animationDelay: `${index * 100}ms`,
                                             animationFillMode: 'forwards'
@@ -251,24 +235,35 @@ const ProgramStudiPage = () => {
                                     >
                                         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
                                             <div className="flex-1">
-                                                <h3 className="font-semibold text-gray-800 mb-2 text-base lg:text-lg">
-                                                    {program.level} - PROGRAM STUDI {program.level} {program.name.toUpperCase()}
+                                                <div className="flex items-center gap-3 mb-3">
+                                                    <span className="bg-[#1a81ca] text-white px-3 py-1 rounded-lg text-sm font-bold">
+                                                        {program.level}
+                                                    </span>
+                                                </div>
+                                                
+                                                <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2 leading-tight">
+                                                    {program.name}
                                                 </h3>
+                                                
                                                 <p className="text-sm lg:text-base text-gray-600 mb-1">
-                                                    Tersedia 5 Jalur Pendaftaran
+                                                    Tersedia 5 jalur pendaftaran dengan berbagai keunggulan
                                                 </p>
+                                                
                                                 {program.faculty && (
                                                     <p className="text-xs lg:text-sm text-gray-500">
                                                         Fakultas: {program.faculty}
                                                     </p>
                                                 )}
                                             </div>
-                                            <button
-                                                onClick={() => handleProgramDetail(program.id)}
-                                                className="border border-[#1a81ca] bg-white text-[#1a81ca] font-semibold px-5 lg:px-6 py-2.5 lg:py-3 rounded-md hover:bg-[#1a81ca] hover:text-white transition-all duration-300 text-sm self-start transform hover:scale-[1.02] active:scale-[0.98]"
-                                            >
-                                                Lihat Detail
-                                            </button>
+                                            
+                                            <div className="flex-shrink-0">
+                                                <button
+                                                    onClick={() => handleProgramDetail(program.id)}
+                                                    className="bg-gray-50 text-[#1a81ca] font-semibold px-6 py-3 rounded-lg hover:bg-[#1a81ca] hover:text-white transition-all duration-300 border-2 border-transparent hover:border-[#1a81ca] text-sm lg:text-base"
+                                                >
+                                                    Lihat Detail Program
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 ))}

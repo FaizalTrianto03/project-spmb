@@ -161,7 +161,7 @@ const JalurPendaftaranPage = () => {
 
             {/* Main Content - Normal padding */}
             <main className="py-6 sm:py-8 lg:py-12">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-24">
 
                     {/* Content Container */}
                     <div className="bg-white rounded-lg shadow-sm border p-4 lg:p-6 transform transition-all duration-300 hover:shadow-md">
@@ -176,83 +176,98 @@ const JalurPendaftaranPage = () => {
                             </p>
                         </div>
 
-                        {/* Search Form */}
+                        {/* Search Form - Konsisten dengan main page */}
                         <div className="mb-6 lg:mb-8">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
-                                <div className="transform transition-all duration-200 hover:scale-[1.01]">
-                                    <select
-                                        value={selectedLevel}
-                                        onChange={(e) => setSelectedLevel(e.target.value)}
-                                        className="w-full px-3 py-2.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a81ca] focus:border-transparent transition-all duration-200 text-gray-800 bg-white appearance-none bg-no-repeat bg-right pr-8"
-                                        style={{
-                                            backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
-                                            backgroundPosition: 'right 0.5rem center',
-                                            backgroundSize: '1rem 1rem'
-                                        }}
-                                    >
-                                        <option value="" className="text-gray-500">-- Pilih Jenjang --</option>
-                                        <option value="PROFESI" className="text-gray-800">Prof - Profesi</option>
-                                        <option value="S1" className="text-gray-800">S1 - Strata 1</option>
-                                        <option value="D3" className="text-gray-800">D3 - Diploma 3</option>
-                                    </select>
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                        Jenjang Pendidikan
+                                    </label>
+                                    <div className="relative">
+                                        <select
+                                            value={selectedLevel}
+                                            onChange={(e) => setSelectedLevel(e.target.value)}
+                                            className="w-full px-4 py-3 pr-10 text-sm border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1a81ca] focus:border-[#1a81ca] transition-all duration-200 text-gray-800 bg-white font-medium appearance-none"
+                                        >
+                                            <option value="">Pilih Jenjang</option>
+                                            <option value="D3">D3 - Diploma 3</option>
+                                            <option value="S1">S1 - Strata 1</option>
+                                            <option value="PROFESI">Profesi</option>
+                                        </select>
+                                        <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div className="transform transition-all duration-200 hover:scale-[1.01]">
-                                    <select
-                                        value={selectedProgram}
-                                        onChange={(e) => setSelectedProgram(e.target.value)}
-                                        className="w-full px-3 py-2.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a81ca] focus:border-transparent transition-all duration-200 text-gray-800 bg-white disabled:bg-gray-100 disabled:text-gray-500 appearance-none bg-no-repeat bg-right pr-8"
-                                        style={{
-                                            backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
-                                            backgroundPosition: 'right 0.5rem center',
-                                            backgroundSize: '1rem 1rem'
-                                        }}
-                                        disabled={!selectedLevel}
-                                    >
-                                        <option value="" className="text-gray-500">-- Pilih Program Studi --</option>
-                                        {filteredDropdownPrograms.map(program => (
-                                            <option key={program.id} value={program.code} className="text-gray-800">
-                                                {program.name}
-                                            </option>
-                                        ))}
-                                    </select>
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                        Program Studi
+                                    </label>
+                                    <div className="relative">
+                                        <select
+                                            value={selectedProgram}
+                                            onChange={(e) => setSelectedProgram(e.target.value)}
+                                            className="w-full px-4 py-3 pr-10 text-sm border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1a81ca] focus:border-[#1a81ca] transition-all duration-200 text-gray-800 bg-white disabled:bg-gray-100 disabled:text-gray-500 font-medium appearance-none"
+                                            disabled={!selectedLevel}
+                                        >
+                                            <option value="">Pilih Program Studi</option>
+                                            {filteredDropdownPrograms.map(program => (
+                                                <option key={program.id} value={program.code}>
+                                                    {program.name}
+                                                </option>
+                                            ))}
+                                        </select>
+                                        <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div className="transform transition-all duration-200 hover:scale-[1.01]">
-                                    <select
-                                        value={selectedSystem}
-                                        onChange={(e) => setSelectedSystem(e.target.value)}
-                                        className="w-full px-3 py-2.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a81ca] focus:border-transparent transition-all duration-200 text-gray-800 bg-white appearance-none bg-no-repeat bg-right pr-8"
-                                        style={{
-                                            backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
-                                            backgroundPosition: 'right 0.5rem center',
-                                            backgroundSize: '1rem 1rem'
-                                        }}
-                                    >
-                                        <option value="" className="text-gray-500">-- Pilih Sistem Kuliah --</option>
-                                        <option value="reguler" className="text-gray-800">Reguler</option>
-                                        <option value="transfer" className="text-gray-800">Reguler Transfer</option>
-                                    </select>
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                        Sistem Kuliah
+                                    </label>
+                                    <div className="relative">
+                                        <select
+                                            value={selectedSystem}
+                                            onChange={(e) => setSelectedSystem(e.target.value)}
+                                            className="w-full px-4 py-3 pr-10 text-sm border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1a81ca] focus:border-[#1a81ca] transition-all duration-200 text-gray-800 bg-white font-medium appearance-none"
+                                        >
+                                            <option value="">Pilih Sistem Kuliah</option>
+                                            <option value="reguler">Reguler</option>
+                                            <option value="reguler_transfer">Reguler Transfer</option>
+                                        </select>
+                                        <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                             <div className="text-center">
                                 <button
                                     onClick={handleSearch}
-                                    className="bg-[#1a81ca] text-white font-semibold px-6 py-2.5 text-sm rounded-md hover:bg-[#1565a0] transition-all duration-300 shadow-sm hover:shadow-md transform hover:scale-[1.02] active:scale-[0.98]"
+                                    className="bg-[#1a81ca] text-white font-bold px-8 lg:px-12 py-4 text-base lg:text-lg rounded-xl hover:bg-[#1565a0] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
                                 >
                                     Cari Jalur Pendaftaran
                                 </button>
                             </div>
                         </div>
 
-                        {/* Dropdown Tata Cara Pendaftaran - Minimalis */}
-                        <div className="mb-6 lg:mb-8 border border-gray-200 rounded-lg overflow-hidden">
+                        {/* Dropdown Tata Cara Pendaftaran - Konsisten dengan style card */}
+                        <div className="mb-6 lg:mb-8 bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-[#1a81ca] transition-all duration-300">
                             <button
                                 onClick={() => setShowInstructions(!showInstructions)}
-                                className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors duration-200"
+                                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors duration-200"
                             >
-                                <h3 className="text-base font-semibold text-gray-800">
+                                <h3 className="text-lg font-bold text-gray-900">
                                     Tata Cara Pendaftaran Mahasiswa Baru
                                 </h3>
                                 <svg
@@ -266,8 +281,8 @@ const JalurPendaftaranPage = () => {
                             </button>
 
                             <div className={`transition-all duration-300 ease-in-out overflow-hidden ${showInstructions ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                                <div className="px-4 pb-4 border-t border-gray-200">
-                                    <div className="space-y-3 pt-4">
+                                <div className="px-6 pb-6 border-t border-gray-200">
+                                    <div className="space-y-4 pt-6">
                                         {[
                                             "Pilih Jalur Pendaftaran - Tentukan jalur masuk sesuai pilihan dan ketentuan kampus.",
                                             "Isi Formulir Pendaftaran - Lengkapi data diri pada formulir secara benar.",
@@ -275,10 +290,10 @@ const JalurPendaftaranPage = () => {
                                             "Unggah Berkas & Ikuti Seleksi - Kirim dokumen dan ikuti tahapan seleksi sesuai jadwal."
                                         ].map((step, index) => (
                                             <div key={index} className="flex items-start space-x-3">
-                                                <span className="w-6 h-6 bg-[#1a81ca] text-white rounded-full flex items-center justify-center text-sm font-medium flex-shrink-0 mt-0.5">
+                                                <div className="w-6 h-6 bg-[#1a81ca] text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
                                                     {index + 1}
-                                                </span>
-                                                <p className="text-sm text-gray-700">{step}</p>
+                                                </div>
+                                                <p className="text-sm text-gray-700 leading-relaxed">{step}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -307,54 +322,52 @@ const JalurPendaftaranPage = () => {
                                 </p>
                             </div>
                         ) : (
-                            <div className="space-y-4 lg:space-y-6">
+                            <div className="space-y-4">
                                 {filteredPaths.map((path, index) => (
                                     <div
                                         key={path.id}
-                                        className={`border border-gray-200 rounded-lg p-4 lg:p-6 transform transition-all duration-300 hover:shadow-md hover:border-gray-300 hover:scale-[1.01] fade-in-up`}
+                                        className={`bg-white rounded-xl border-2 border-gray-200 p-6 hover:border-[#1a81ca] hover:shadow-lg transition-all duration-300 fade-in-up`}
                                         style={{
                                             animationDelay: `${index * 100}ms`,
                                             animationFillMode: 'forwards'
                                         }}
                                     >
-                                        <div className="flex items-start gap-6">
-                                            <div className="flex-1 min-w-0">
-                                                <div className="mb-3">
-                                                    <h3 className="font-semibold text-gray-900 text-base lg:text-lg mb-1">
-                                                        {path.name} - {path.wave}
-                                                    </h3>
+                                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                                            <div className="flex-1">
+                                                <div className="flex items-center gap-3 mb-3">
+                                                    <span className="bg-[#1a81ca] text-white px-3 py-1 rounded-lg text-sm font-bold">
+                                                        {path.wave}
+                                                    </span>
                                                 </div>
+                                                
+                                                <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 leading-tight">
+                                                    {path.name}
+                                                </h3>
 
-                                                {/* Sistem Kuliah dan Biaya Pendaftaran - Vertikal */}
                                                 <div className="space-y-2 text-sm lg:text-base">
-                                                    <div>
-                                                        <span className="text-gray-500">Sistem Kuliah: </span>
+                                                    <div className="flex items-center gap-2">
+                                                        <span className="text-gray-500">Sistem Kuliah:</span>
                                                         <span className="font-medium text-gray-900">{path.study_system}</span>
                                                     </div>
-                                                    <div>
-                                                        <span className="text-gray-500">Biaya Pendaftaran: </span>
+                                                    <div className="flex items-center gap-2">
+                                                        <span className="text-gray-500">Biaya Pendaftaran:</span>
                                                         <span className={`font-semibold ${path.registration_fee === 0 ? 'text-green-600' : 'text-orange-600'}`}>
                                                             {formatCurrency(path.registration_fee)}
                                                         </span>
                                                     </div>
+                                                    <div className="flex items-center gap-2">
+                                                        <span className="text-gray-500">Periode:</span>
+                                                        <span className="font-medium text-gray-900">
+                                                            {formatDate(path.start_date)} - {formatDate(path.end_date)}
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
-
-                                            {/* Garis Pembatas Vertikal */}
-                                            <div className="w-px bg-gray-200 self-stretch"></div>
-
-                                            {/* Kanan: Periode (atas) dan Tombol (bawah) - Vertikal */}
-                                            <div className="flex flex-col items-end gap-3 min-w-[200px]">
-                                                <div className="text-sm lg:text-base text-right">
-                                                    <span className="text-gray-500 block">Periode Pendaftaran</span>
-                                                    <span className="font-medium text-gray-900">
-                                                        {formatDate(path.start_date)} - {formatDate(path.end_date)}
-                                                    </span>
-                                                </div>
-
+                                            
+                                            <div className="flex-shrink-0">
                                                 <button
                                                     onClick={() => handleRegister(path.id)}
-                                                    className="bg-[#1a81ca] text-white font-semibold px-5 lg:px-6 py-2.5 lg:py-3 rounded-md hover:bg-[#1565a0] transition-all duration-300 text-sm self-start transform hover:scale-[1.02] active:scale-[0.98] w-full"
+                                                    className="bg-gray-50 text-[#1a81ca] font-semibold px-6 py-3 rounded-lg hover:bg-[#1a81ca] hover:text-white transition-all duration-300 border-2 border-transparent hover:border-[#1a81ca] text-sm lg:text-base"
                                                 >
                                                     Daftar Sekarang
                                                 </button>

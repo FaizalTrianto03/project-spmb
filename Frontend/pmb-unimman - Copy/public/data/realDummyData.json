@@ -1,0 +1,1633 @@
+{
+  "database_name": "pmb_unimman",
+  "dummy_data": {
+    "universities": [
+      {
+        "id": 1,
+        "name": "Universitas Muhammadiyah Manado",
+        "address": "Jl. Kampus Unimman, Bahu, Malalayang, Manado, Sulawesi Utara 95115",
+        "phone": "0431-863775",
+        "email": "info@unimman.ac.id",
+        "website": "https://unimman.ac.id",
+        "logo_url": "/assets/logo-unimman.png",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      }
+    ],
+    "study_programs": [
+      {
+        "id": 1,
+        "code": "D3-FARMASI",
+        "name": "Farmasi",
+        "level": "D3",
+        "accreditation": "Baik Sekali",
+        "website": "https://farmasi.unimman.ac.id",
+        "quota": 50,
+        "is_active": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 2,
+        "code": "S1-FARMASI",
+        "name": "Farmasi",
+        "level": "S1",
+        "accreditation": "Baik Sekali",
+        "website": "https://farmasi.unimman.ac.id",
+        "quota": 100,
+        "is_active": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3,
+        "code": "PROFESI-APOTEKER",
+        "name": "Profesi Apoteker",
+        "level": "PROFESI",
+        "accreditation": "Baik Sekali",
+        "website": "https://farmasi.unimman.ac.id",
+        "quota": 30,
+        "is_active": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 4,
+        "code": "S1-KEPERAWATAN",
+        "name": "Keperawatan",
+        "level": "S1",
+        "accreditation": "Baik",
+        "website": "https://keperawatan.unimman.ac.id",
+        "quota": 80,
+        "is_active": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 5,
+        "code": "PROFESI-NERS",
+        "name": "Profesi Ners",
+        "level": "PROFESI",
+        "accreditation": "Baik",
+        "website": "https://keperawatan.unimman.ac.id",
+        "quota": 40,
+        "is_active": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 6,
+        "code": "S1-KEBIDANAN",
+        "name": "Kebidanan",
+        "level": "S1",
+        "accreditation": "Baik",
+        "website": "https://kebidanan.unimman.ac.id",
+        "quota": 60,
+        "is_active": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7,
+        "code": "PROFESI-BIDAN",
+        "name": "Profesi Bidan",
+        "level": "PROFESI",
+        "accreditation": "Baik",
+        "website": "https://kebidanan.unimman.ac.id",
+        "quota": 30,
+        "is_active": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 8,
+        "code": "S1-GIZI",
+        "name": "Gizi",
+        "level": "S1",
+        "accreditation": "Baik",
+        "website": "https://gizi.unimman.ac.id",
+        "quota": 50,
+        "is_active": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 9,
+        "code": "S1-KESMAS",
+        "name": "Kesehatan Masyarakat",
+        "level": "S1",
+        "accreditation": "Baik",
+        "website": "https://kesmas.unimman.ac.id",
+        "quota": 70,
+        "is_active": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 10,
+        "code": "S1-TEKNIK-SIPIL",
+        "name": "Teknik Sipil",
+        "level": "S1",
+        "accreditation": "Baik",
+        "website": "https://teknik.unimman.ac.id",
+        "quota": 90,
+        "is_active": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      }
+    ],
+    "admission_paths": [
+      {
+        "id": 1,
+        "code": "PMB_KADER_2025",
+        "name": "PMB JALUR KADER MUHAMMADIYAH 2025",
+        "description": "Jalur khusus untuk kader Muhammadiyah dengan bebas biaya pendaftaran",
+        "registration_fee": 0.00,
+        "study_system": "Reguler",
+        "target_students": "Khusus Peserta Didik Baru Non Transfer",
+        "schedule": "Pagi-Sore",
+        "start_date": "2025-01-01",
+        "end_date": "2025-12-31",
+        "wave": "Gelombang 1",
+        "academic_year": "2025",
+        "semester": "GANJIL",
+        "is_active": true,
+        "created_at": "2024-12-01 08:00:00",
+        "updated_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 2,
+        "code": "PMB_REGULER_2025_G1",
+        "name": "PMB JALUR REGULER 2025 GELOMBANG 1",
+        "description": "Jalur pendaftaran reguler gelombang pertama",
+        "registration_fee": 300000.00,
+        "study_system": "Reguler",
+        "target_students": "Peserta Didik Baru",
+        "schedule": "Pagi-Sore",
+        "start_date": "2025-02-01",
+        "end_date": "2025-05-31",
+        "wave": "Gelombang 1",
+        "academic_year": "2025",
+        "semester": "GANJIL",
+        "is_active": true,
+        "created_at": "2024-12-01 08:00:00",
+        "updated_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 3,
+        "code": "PMB_REGULER_2025_G2",
+        "name": "PMB JALUR REGULER 2025 GELOMBANG 2",
+        "description": "Jalur pendaftaran reguler gelombang kedua",
+        "registration_fee": 350000.00,
+        "study_system": "Reguler",
+        "target_students": "Peserta Didik Baru",
+        "schedule": "Pagi-Sore",
+        "start_date": "2025-06-01",
+        "end_date": "2025-08-31",
+        "wave": "Gelombang 2",
+        "academic_year": "2025",
+        "semester": "GANJIL",
+        "is_active": true,
+        "created_at": "2024-12-01 08:00:00",
+        "updated_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 4,
+        "code": "PMB_TRANSFER_2025",
+        "name": "PMB JALUR TRANSFER 2025",
+        "description": "Jalur khusus mahasiswa transfer dari perguruan tinggi lain",
+        "registration_fee": 400000.00,
+        "study_system": "Reguler",
+        "target_students": "Mahasiswa Transfer",
+        "schedule": "Pagi-Sore",
+        "start_date": "2025-03-01",
+        "end_date": "2025-07-31",
+        "wave": "Gelombang 1",
+        "academic_year": "2025",
+        "semester": "GANJIL",
+        "is_active": true,
+        "created_at": "2024-12-01 08:00:00",
+        "updated_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 5,
+        "code": "PMB_BEASISWA_2025",
+        "name": "PMB JALUR BEASISWA 2025",
+        "description": "Jalur khusus untuk calon mahasiswa berprestasi dengan beasiswa",
+        "registration_fee": 0.00,
+        "study_system": "Reguler",
+        "target_students": "Peserta Didik Berprestasi",
+        "schedule": "Pagi-Sore",
+        "start_date": "2025-01-15",
+        "end_date": "2025-04-30",
+        "wave": "Gelombang 1",
+        "academic_year": "2025",
+        "semester": "GANJIL",
+        "is_active": true,
+        "created_at": "2024-12-01 08:00:00",
+        "updated_at": "2024-12-01 08:00:00"
+      }
+    ],
+    "provinces": [
+      {
+        "id": 11,
+        "name": "Aceh",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 12,
+        "name": "Sumatera Utara",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 13,
+        "name": "Sumatera Barat",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 14,
+        "name": "Riau",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 15,
+        "name": "Jambi",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 16,
+        "name": "Sumatera Selatan",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 17,
+        "name": "Bengkulu",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 18,
+        "name": "Lampung",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 19,
+        "name": "Kepulauan Bangka Belitung",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 21,
+        "name": "Kepulauan Riau",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 31,
+        "name": "DKI Jakarta",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 32,
+        "name": "Jawa Barat",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 33,
+        "name": "Jawa Tengah",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 34,
+        "name": "DI Yogyakarta",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 35,
+        "name": "Jawa Timur",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 36,
+        "name": "Banten",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 51,
+        "name": "Bali",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 52,
+        "name": "Nusa Tenggara Barat",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 53,
+        "name": "Nusa Tenggara Timur",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 61,
+        "name": "Kalimantan Barat",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 62,
+        "name": "Kalimantan Tengah",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 63,
+        "name": "Kalimantan Selatan",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 64,
+        "name": "Kalimantan Timur",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 65,
+        "name": "Kalimantan Utara",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 71,
+        "name": "Sulawesi Utara",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 72,
+        "name": "Sulawesi Tengah",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 73,
+        "name": "Sulawesi Selatan",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 74,
+        "name": "Sulawesi Tenggara",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 75,
+        "name": "Gorontalo",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 76,
+        "name": "Sulawesi Barat",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 81,
+        "name": "Maluku",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 82,
+        "name": "Maluku Utara",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 91,
+        "name": "Papua Barat",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 94,
+        "name": "Papua",
+        "created_at": "2024-01-01 08:00:00"
+      }
+    ],
+    "cities": [
+      {
+        "id": 7101,
+        "province_id": 71,
+        "name": "Manado",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7102,
+        "province_id": 71,
+        "name": "Bitung",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7103,
+        "province_id": 71,
+        "name": "Tomohon",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7104,
+        "province_id": 71,
+        "name": "Kotamobagu",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7105,
+        "province_id": 71,
+        "name": "Minahasa",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7106,
+        "province_id": 71,
+        "name": "Minahasa Selatan",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7107,
+        "province_id": 71,
+        "name": "Minahasa Utara",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7108,
+        "province_id": 71,
+        "name": "Minahasa Tenggara",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7109,
+        "province_id": 71,
+        "name": "Bolaang Mongondow",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7110,
+        "province_id": 71,
+        "name": "Kepulauan Sangihe",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7111,
+        "province_id": 71,
+        "name": "Kepulauan Talaud",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7112,
+        "province_id": 71,
+        "name": "Siau Tagulandang Biaro",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7113,
+        "province_id": 71,
+        "name": "Bolaang Mongondow Utara",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7114,
+        "province_id": 71,
+        "name": "Bolaang Mongondow Selatan",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7115,
+        "province_id": 71,
+        "name": "Bolaang Mongondow Timur",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7501,
+        "province_id": 75,
+        "name": "Gorontalo",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7502,
+        "province_id": 75,
+        "name": "Gorontalo Utara",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7503,
+        "province_id": 75,
+        "name": "Bone Bolango",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7504,
+        "province_id": 75,
+        "name": "Pahuwato",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7505,
+        "province_id": 75,
+        "name": "Pohuwato",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3101,
+        "province_id": 31,
+        "name": "Jakarta Pusat",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3102,
+        "province_id": 31,
+        "name": "Jakarta Utara",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3103,
+        "province_id": 31,
+        "name": "Jakarta Barat",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3104,
+        "province_id": 31,
+        "name": "Jakarta Selatan",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3105,
+        "province_id": 31,
+        "name": "Jakarta Timur",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3201,
+        "province_id": 32,
+        "name": "Bandung",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3202,
+        "province_id": 32,
+        "name": "Bekasi",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3203,
+        "province_id": 32,
+        "name": "Bogor",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3204,
+        "province_id": 32,
+        "name": "Cirebon",
+        "created_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3205,
+        "province_id": 32,
+        "name": "Depok",
+        "created_at": "2024-01-01 08:00:00"
+      }
+    ],
+    "schools": [
+      {
+        "id": 1,
+        "npsn": "40101001",
+        "name": "SMA Negeri 1 Manado",
+        "type": "SMA",
+        "province_id": 71,
+        "city_id": 7101,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 2,
+        "npsn": "40101002",
+        "name": "SMA Negeri 2 Manado",
+        "type": "SMA",
+        "province_id": 71,
+        "city_id": 7101,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3,
+        "npsn": "40101003",
+        "name": "SMA Negeri 3 Manado",
+        "type": "SMA",
+        "province_id": 71,
+        "city_id": 7101,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 4,
+        "npsn": "40101004",
+        "name": "SMA Negeri 4 Manado",
+        "type": "SMA",
+        "province_id": 71,
+        "city_id": 7101,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 5,
+        "npsn": "40101005",
+        "name": "SMA Negeri 5 Manado",
+        "type": "SMA",
+        "province_id": 71,
+        "city_id": 7101,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 6,
+        "npsn": "40101101",
+        "name": "SMK Negeri 1 Manado",
+        "type": "SMK",
+        "province_id": 71,
+        "city_id": 7101,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7,
+        "npsn": "40101102",
+        "name": "SMK Negeri 2 Manado",
+        "type": "SMK",
+        "province_id": 71,
+        "city_id": 7101,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 8,
+        "npsn": "40101201",
+        "name": "MAN 1 Manado",
+        "type": "MA",
+        "province_id": 71,
+        "city_id": 7101,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 9,
+        "npsn": "40101202",
+        "name": "MAN 2 Manado",
+        "type": "MA",
+        "province_id": 71,
+        "city_id": 7101,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 10,
+        "npsn": "40101301",
+        "name": "SMA Kristen 1 Manado",
+        "type": "SMA",
+        "province_id": 71,
+        "city_id": 7101,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 11,
+        "npsn": "40102001",
+        "name": "SMA Negeri 1 Bitung",
+        "type": "SMA",
+        "province_id": 71,
+        "city_id": 7102,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 12,
+        "npsn": "40102002",
+        "name": "SMA Negeri 2 Bitung",
+        "type": "SMA",
+        "province_id": 71,
+        "city_id": 7102,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 13,
+        "npsn": "40103001",
+        "name": "SMA Negeri 1 Tomohon",
+        "type": "SMA",
+        "province_id": 71,
+        "city_id": 7103,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 14,
+        "npsn": "40103002",
+        "name": "SMA Negeri 2 Tomohon",
+        "type": "SMA",
+        "province_id": 71,
+        "city_id": 7103,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 15,
+        "npsn": "40104001",
+        "name": "SMA Negeri 1 Kotamobagu",
+        "type": "SMA",
+        "province_id": 71,
+        "city_id": 7104,
+        "is_verified": true,
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      }
+    ],
+    "admission_path_programs": [
+      {
+        "id": 1,
+        "admission_path_id": 1,
+        "study_program_id": 1,
+        "quota": 10,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 2,
+        "admission_path_id": 1,
+        "study_program_id": 2,
+        "quota": 20,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 3,
+        "admission_path_id": 1,
+        "study_program_id": 4,
+        "quota": 15,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 4,
+        "admission_path_id": 2,
+        "study_program_id": 1,
+        "quota": 25,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 5,
+        "admission_path_id": 2,
+        "study_program_id": 2,
+        "quota": 40,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 6,
+        "admission_path_id": 2,
+        "study_program_id": 4,
+        "quota": 35,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 7,
+        "admission_path_id": 2,
+        "study_program_id": 6,
+        "quota": 30,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 8,
+        "admission_path_id": 2,
+        "study_program_id": 8,
+        "quota": 25,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 9,
+        "admission_path_id": 2,
+        "study_program_id": 9,
+        "quota": 35,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 10,
+        "admission_path_id": 2,
+        "study_program_id": 10,
+        "quota": 45,
+        "created_at": "2024-12-01 08:00:00"
+      }
+    ],
+    "registrations": [
+      {
+        "id": 1,
+        "registration_number": "PMB2025001",
+        "admission_path_id": 1,
+        "full_name": "Siti Rahmawati Putri",
+        "gender": "FEMALE",
+        "mobile_number": "081234567890",
+        "email": "siti.rahmawati@gmail.com",
+        "date_of_birth": "2006-05-15",
+        "place_of_birth": "Manado",
+        "nationality": "Indonesia",
+        "nik": "7101234567890001",
+        "province_id": 71,
+        "city_id": 7101,
+        "school_id": 1,
+        "school_specialization": "IPA",
+        "graduation_year": 2024,
+        "first_choice_program_id": 2,
+        "second_choice_program_id": 1,
+        "registration_status": "SUBMITTED",
+        "payment_status": "PAID",
+        "created_at": "2025-01-15 10:30:00",
+        "updated_at": "2025-01-15 11:45:00"
+      },
+      {
+        "id": 2,
+        "registration_number": "PMB2025002",
+        "admission_path_id": 2,
+        "full_name": "Muhammad Rizki Pratama",
+        "gender": "MALE",
+        "mobile_number": "081298765432",
+        "email": "rizki.pratama@gmail.com",
+        "date_of_birth": "2006-08-22",
+        "place_of_birth": "Bitung",
+        "nationality": "Indonesia",
+        "nik": "7102345678901002",
+        "province_id": 71,
+        "city_id": 7102,
+        "school_id": 11,
+        "school_specialization": "IPA",
+        "graduation_year": 2024,
+        "first_choice_program_id": 4,
+        "second_choice_program_id": 2,
+        "registration_status": "VERIFIED",
+        "payment_status": "PAID",
+        "created_at": "2025-02-10 14:20:00",
+        "updated_at": "2025-02-12 09:15:00"
+      },
+      {
+        "id": 3,
+        "registration_number": "PMB2025003",
+        "admission_path_id": 2,
+        "full_name": "Angelica Stephanie Wulandari",
+        "gender": "FEMALE",
+        "mobile_number": "081356789012",
+        "email": "angelica.stephanie@gmail.com",
+        "date_of_birth": "2006-03-10",
+        "place_of_birth": "Tomohon",
+        "nationality": "Indonesia",
+        "nik": "7103456789012003",
+        "province_id": 71,
+        "city_id": 7103,
+        "school_id": 13,
+        "school_specialization": "IPS",
+        "graduation_year": 2024,
+        "first_choice_program_id": 6,
+        "second_choice_program_id": 8,
+        "registration_status": "ACCEPTED",
+        "payment_status": "PAID",
+        "created_at": "2025-02-15 16:45:00",
+        "updated_at": "2025-02-20 13:30:00"
+      },
+      {
+        "id": 4,
+        "registration_number": "PMB2025004",
+        "admission_path_id": 1,
+        "full_name": "Ahmad Fadhil Rahman",
+        "gender": "MALE",
+        "mobile_number": "081445678901",
+        "email": "ahmad.fadhil@gmail.com",
+        "date_of_birth": "2006-12-05",
+        "place_of_birth": "Manado",
+        "nationality": "Indonesia",
+        "nik": "7101567890123004",
+        "province_id": 71,
+        "city_id": 7101,
+        "school_id": 8,
+        "school_specialization": "IPA",
+        "graduation_year": 2024,
+        "first_choice_program_id": 1,
+        "second_choice_program_id": null,
+        "registration_status": "SUBMITTED",
+        "payment_status": "PAID",
+        "created_at": "2025-01-20 11:15:00",
+        "updated_at": "2025-01-20 11:15:00"
+      },
+      {
+        "id": 5,
+        "registration_number": "PMB2025005",
+        "admission_path_id": 2,
+        "full_name": "Jessica Natalia Kumaat",
+        "gender": "FEMALE",
+        "mobile_number": "081523456789",
+        "email": "jessica.natalia@gmail.com",
+        "date_of_birth": "2006-07-18",
+        "place_of_birth": "Manado",
+        "nationality": "Indonesia",
+        "nik": "7101678901234005",
+        "province_id": 71,
+        "city_id": 7101,
+        "school_id": 3,
+        "school_specialization": "IPA",
+        "graduation_year": 2024,
+        "first_choice_program_id": 9,
+        "second_choice_program_id": 8,
+        "registration_status": "VERIFIED",
+        "payment_status": "PAID",
+        "created_at": "2025-02-25 08:30:00",
+        "updated_at": "2025-02-28 14:20:00"
+      },
+      {
+        "id": 6,
+        "registration_number": "PMB2025006",
+        "admission_path_id": 2,
+        "full_name": "David Christian Manoppo",
+        "gender": "MALE",
+        "mobile_number": "081634567890",
+        "email": "david.christian@gmail.com",
+        "date_of_birth": "2006-09-30",
+        "place_of_birth": "Kotamobagu",
+        "nationality": "Indonesia",
+        "nik": "7104789012345006",
+        "province_id": 71,
+        "city_id": 7104,
+        "school_id": 15,
+        "school_specialization": "IPA",
+        "graduation_year": 2024,
+        "first_choice_program_id": 10,
+        "second_choice_program_id": 2,
+        "registration_status": "DRAFT",
+        "payment_status": "PENDING",
+        "created_at": "2025-03-01 10:00:00",
+        "updated_at": "2025-03-01 10:00:00"
+      },
+      {
+        "id": 7,
+        "registration_number": "PMB2025007",
+        "admission_path_id": 5,
+        "full_name": "Putri Ayu Lestari",
+        "gender": "FEMALE",
+        "mobile_number": "081745678901",
+        "email": "putri.ayu@gmail.com",
+        "date_of_birth": "2006-04-12",
+        "place_of_birth": "Bitung",
+        "nationality": "Indonesia",
+        "nik": "7102890123456007",
+        "province_id": 71,
+        "city_id": 7102,
+        "school_id": 12,
+        "school_specialization": "IPA",
+        "graduation_year": 2024,
+        "first_choice_program_id": 2,
+        "second_choice_program_id": 4,
+        "registration_status": "ACCEPTED",
+        "payment_status": "PAID",
+        "created_at": "2025-01-25 13:45:00",
+        "updated_at": "2025-02-05 16:30:00"
+      },
+      {
+        "id": 8,
+        "registration_number": "PMB2025008",
+        "admission_path_id": 2,
+        "full_name": "Kevin Alexander Tumbelaka",
+        "gender": "MALE",
+        "mobile_number": "081856789012",
+        "email": "kevin.alexander@gmail.com",
+        "date_of_birth": "2006-11-25",
+        "place_of_birth": "Manado",
+        "nationality": "Indonesia",
+        "nik": "7101901234567008",
+        "province_id": 71,
+        "city_id": 7101,
+        "school_id": 6,
+        "school_specialization": "Teknik Komputer Jaringan",
+        "graduation_year": 2024,
+        "first_choice_program_id": 10,
+        "second_choice_program_id": null,
+        "registration_status": "SUBMITTED",
+        "payment_status": "PAID",
+        "created_at": "2025-03-05 15:20:00",
+        "updated_at": "2025-03-05 15:20:00"
+      }
+    ],
+    "admission_requirements": [
+      {
+        "id": 1,
+        "admission_path_id": 1,
+        "requirement_name": "Foto Copy Ijazah/SKHUN",
+        "description": "Fotokopi ijazah atau surat keterangan hasil ujian nasional yang telah dilegalisir",
+        "is_mandatory": true,
+        "file_type": "PDF",
+        "max_file_size": 2048,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 2,
+        "admission_path_id": 1,
+        "requirement_name": "Foto Copy Transkrip Nilai",
+        "description": "Fotokopi transkrip nilai yang telah dilegalisir",
+        "is_mandatory": true,
+        "file_type": "PDF",
+        "max_file_size": 2048,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 3,
+        "admission_path_id": 1,
+        "requirement_name": "Foto Copy KTP",
+        "description": "Fotokopi Kartu Tanda Penduduk yang masih berlaku",
+        "is_mandatory": true,
+        "file_type": "PDF",
+        "max_file_size": 1024,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 4,
+        "admission_path_id": 1,
+        "requirement_name": "Foto Copy Kartu Keluarga",
+        "description": "Fotokopi Kartu Keluarga",
+        "is_mandatory": true,
+        "file_type": "PDF",
+        "max_file_size": 1024,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 5,
+        "admission_path_id": 1,
+        "requirement_name": "Pas Foto 3x4",
+        "description": "Pas foto terbaru ukuran 3x4 dengan latar belakang merah",
+        "is_mandatory": true,
+        "file_type": "JPG",
+        "max_file_size": 512,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 6,
+        "admission_path_id": 1,
+        "requirement_name": "Surat Keterangan Kader Muhammadiyah",
+        "description": "Surat keterangan dari organisasi Muhammadiyah yang menyatakan sebagai kader",
+        "is_mandatory": true,
+        "file_type": "PDF",
+        "max_file_size": 2048,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 7,
+        "admission_path_id": 2,
+        "requirement_name": "Foto Copy Ijazah/SKHUN",
+        "description": "Fotokopi ijazah atau surat keterangan hasil ujian nasional yang telah dilegalisir",
+        "is_mandatory": true,
+        "file_type": "PDF",
+        "max_file_size": 2048,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 8,
+        "admission_path_id": 2,
+        "requirement_name": "Foto Copy Transkrip Nilai",
+        "description": "Fotokopi transkrip nilai yang telah dilegalisir",
+        "is_mandatory": true,
+        "file_type": "PDF",
+        "max_file_size": 2048,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 9,
+        "admission_path_id": 2,
+        "requirement_name": "Foto Copy KTP",
+        "description": "Fotokopi Kartu Tanda Penduduk yang masih berlaku",
+        "is_mandatory": true,
+        "file_type": "PDF",
+        "max_file_size": 1024,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 10,
+        "admission_path_id": 2,
+        "requirement_name": "Foto Copy Kartu Keluarga",
+        "description": "Fotokopi Kartu Keluarga",
+        "is_mandatory": true,
+        "file_type": "PDF",
+        "max_file_size": 1024,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 11,
+        "admission_path_id": 2,
+        "requirement_name": "Pas Foto 3x4",
+        "description": "Pas foto terbaru ukuran 3x4 dengan latar belakang merah",
+        "is_mandatory": true,
+        "file_type": "JPG",
+        "max_file_size": 512,
+        "created_at": "2024-12-01 08:00:00"
+      },
+      {
+        "id": 12,
+        "admission_path_id": 2,
+        "requirement_name": "Surat Keterangan Sehat",
+        "description": "Surat keterangan sehat dari dokter",
+        "is_mandatory": false,
+        "file_type": "PDF",
+        "max_file_size": 1024,
+        "created_at": "2024-12-01 08:00:00"
+      }
+    ],
+    "registration_documents": [
+      {
+        "id": 1,
+        "registration_id": 1,
+        "requirement_id": 1,
+        "file_name": "ijazah_siti_rahmawati.pdf",
+        "file_path": "/uploads/documents/2025/01/ijazah_siti_rahmawati.pdf",
+        "file_size": 1856,
+        "upload_date": "2025-01-15 10:45:00",
+        "verification_status": "APPROVED",
+        "verification_notes": "Dokumen lengkap dan sesuai",
+        "created_at": "2025-01-15 10:45:00"
+      },
+      {
+        "id": 2,
+        "registration_id": 1,
+        "requirement_id": 2,
+        "file_name": "transkrip_siti_rahmawati.pdf",
+        "file_path": "/uploads/documents/2025/01/transkrip_siti_rahmawati.pdf",
+        "file_size": 1234,
+        "upload_date": "2025-01-15 10:50:00",
+        "verification_status": "APPROVED",
+        "verification_notes": "Nilai memenuhi syarat",
+        "created_at": "2025-01-15 10:50:00"
+      },
+      {
+        "id": 3,
+        "registration_id": 1,
+        "requirement_id": 3,
+        "file_name": "ktp_siti_rahmawati.pdf",
+        "file_path": "/uploads/documents/2025/01/ktp_siti_rahmawati.pdf",
+        "file_size": 892,
+        "upload_date": "2025-01-15 10:55:00",
+        "verification_status": "APPROVED",
+        "verification_notes": "KTP valid",
+        "created_at": "2025-01-15 10:55:00"
+      },
+      {
+        "id": 4,
+        "registration_id": 1,
+        "requirement_id": 4,
+        "file_name": "kk_siti_rahmawati.pdf",
+        "file_path": "/uploads/documents/2025/01/kk_siti_rahmawati.pdf",
+        "file_size": 756,
+        "upload_date": "2025-01-15 11:00:00",
+        "verification_status": "APPROVED",
+        "verification_notes": "Kartu keluarga sesuai",
+        "created_at": "2025-01-15 11:00:00"
+      },
+      {
+        "id": 5,
+        "registration_id": 1,
+        "requirement_id": 5,
+        "file_name": "foto_siti_rahmawati.jpg",
+        "file_path": "/uploads/documents/2025/01/foto_siti_rahmawati.jpg",
+        "file_size": 345,
+        "upload_date": "2025-01-15 11:05:00",
+        "verification_status": "APPROVED",
+        "verification_notes": "Foto sesuai ketentuan",
+        "created_at": "2025-01-15 11:05:00"
+      },
+      {
+        "id": 6,
+        "registration_id": 1,
+        "requirement_id": 6,
+        "file_name": "surat_kader_siti_rahmawati.pdf",
+        "file_path": "/uploads/documents/2025/01/surat_kader_siti_rahmawati.pdf",
+        "file_size": 1123,
+        "upload_date": "2025-01-15 11:10:00",
+        "verification_status": "APPROVED",
+        "verification_notes": "Surat kader valid dari PCM Manado",
+        "created_at": "2025-01-15 11:10:00"
+      },
+      {
+        "id": 7,
+        "registration_id": 2,
+        "requirement_id": 7,
+        "file_name": "ijazah_muhammad_rizki.pdf",
+        "file_path": "/uploads/documents/2025/02/ijazah_muhammad_rizki.pdf",
+        "file_size": 1967,
+        "upload_date": "2025-02-10 14:35:00",
+        "verification_status": "APPROVED",
+        "verification_notes": "Dokumen lengkap",
+        "created_at": "2025-02-10 14:35:00"
+      },
+      {
+        "id": 8,
+        "registration_id": 2,
+        "requirement_id": 8,
+        "file_name": "transkrip_muhammad_rizki.pdf",
+        "file_path": "/uploads/documents/2025/02/transkrip_muhammad_rizki.pdf",
+        "file_size": 1445,
+        "upload_date": "2025-02-10 14:40:00",
+        "verification_status": "APPROVED",
+        "verification_notes": "Nilai baik",
+        "created_at": "2025-02-10 14:40:00"
+      }
+    ],
+    "payments": [
+      {
+        "id": 1,
+        "registration_id": 1,
+        "payment_code": "PAY2025001",
+        "amount": 0.00,
+        "payment_method": "Gratis Jalur Kader",
+        "payment_date": "2025-01-15 11:30:00",
+        "payment_status": "SUCCESS",
+        "payment_proof": null,
+        "verification_date": "2025-01-15 11:30:00",
+        "created_at": "2025-01-15 11:30:00",
+        "updated_at": "2025-01-15 11:30:00"
+      },
+      {
+        "id": 2,
+        "registration_id": 2,
+        "payment_code": "PAY2025002",
+        "amount": 300000.00,
+        "payment_method": "Transfer Bank",
+        "payment_date": "2025-02-10 15:00:00",
+        "payment_status": "SUCCESS",
+        "payment_proof": "/uploads/payments/2025/02/bukti_transfer_rizki.jpg",
+        "verification_date": "2025-02-11 09:00:00",
+        "created_at": "2025-02-10 15:00:00",
+        "updated_at": "2025-02-11 09:00:00"
+      },
+      {
+        "id": 3,
+        "registration_id": 3,
+        "payment_code": "PAY2025003",
+        "amount": 300000.00,
+        "payment_method": "Transfer Bank",
+        "payment_date": "2025-02-15 17:15:00",
+        "payment_status": "SUCCESS",
+        "payment_proof": "/uploads/payments/2025/02/bukti_transfer_angelica.jpg",
+        "verification_date": "2025-02-16 08:30:00",
+        "created_at": "2025-02-15 17:15:00",
+        "updated_at": "2025-02-16 08:30:00"
+      },
+      {
+        "id": 4,
+        "registration_id": 4,
+        "payment_code": "PAY2025004",
+        "amount": 0.00,
+        "payment_method": "Gratis Jalur Kader",
+        "payment_date": "2025-01-20 11:20:00",
+        "payment_status": "SUCCESS",
+        "payment_proof": null,
+        "verification_date": "2025-01-20 11:20:00",
+        "created_at": "2025-01-20 11:20:00",
+        "updated_at": "2025-01-20 11:20:00"
+      },
+      {
+        "id": 5,
+        "registration_id": 5,
+        "payment_code": "PAY2025005",
+        "amount": 300000.00,
+        "payment_method": "E-Wallet",
+        "payment_date": "2025-02-25 09:00:00",
+        "payment_status": "SUCCESS",
+        "payment_proof": "/uploads/payments/2025/02/bukti_ewallet_jessica.jpg",
+        "verification_date": "2025-02-25 10:15:00",
+        "created_at": "2025-02-25 09:00:00",
+        "updated_at": "2025-02-25 10:15:00"
+      },
+      {
+        "id": 6,
+        "registration_id": 6,
+        "payment_code": "PAY2025006",
+        "amount": 300000.00,
+        "payment_method": "Pending",
+        "payment_date": null,
+        "payment_status": "PENDING",
+        "payment_proof": null,
+        "verification_date": null,
+        "created_at": "2025-03-01 10:05:00",
+        "updated_at": "2025-03-01 10:05:00"
+      },
+      {
+        "id": 7,
+        "registration_id": 7,
+        "payment_code": "PAY2025007",
+        "amount": 0.00,
+        "payment_method": "Gratis Jalur Beasiswa",
+        "payment_date": "2025-01-25 14:00:00",
+        "payment_status": "SUCCESS",
+        "payment_proof": null,
+        "verification_date": "2025-01-25 14:00:00",
+        "created_at": "2025-01-25 14:00:00",
+        "updated_at": "2025-01-25 14:00:00"
+      },
+      {
+        "id": 8,
+        "registration_id": 8,
+        "payment_code": "PAY2025008",
+        "amount": 300000.00,
+        "payment_method": "Transfer Bank",
+        "payment_date": "2025-03-05 16:00:00",
+        "payment_status": "SUCCESS",
+        "payment_proof": "/uploads/payments/2025/03/bukti_transfer_kevin.jpg",
+        "verification_date": "2025-03-06 08:00:00",
+        "created_at": "2025-03-05 16:00:00",
+        "updated_at": "2025-03-06 08:00:00"
+      }
+    ],
+    "announcements": [
+      {
+        "id": 1,
+        "title": "Pembukaan PMB Jalur Kader Muhammadiyah 2025",
+        "content": "Universitas Muhammadiyah Manado membuka pendaftaran jalur khusus kader Muhammadiyah untuk tahun akademik 2025/2026. Pendaftaran gratis untuk seluruh kader yang memiliki surat rekomendasi dari organisasi Muhammadiyah.",
+        "type": "PENGUMUMAN",
+        "banner_image": "/assets/banners/pmb-kader-2025.jpg",
+        "is_published": true,
+        "publish_date": "2024-12-15 08:00:00",
+        "created_at": "2024-12-15 08:00:00",
+        "updated_at": "2024-12-15 08:00:00"
+      },
+      {
+        "id": 2,
+        "title": "Jadwal Pelaksanaan Tes Masuk Gelombang 1",
+        "content": "Tes masuk untuk calon mahasiswa baru gelombang 1 akan dilaksanakan pada tanggal 15-20 Juni 2025. Peserta yang telah dinyatakan lolos administrasi akan mendapat panggilan tes melalui email dan SMS.",
+        "type": "INFORMASI",
+        "banner_image": "/assets/banners/jadwal-tes-2025.jpg",
+        "is_published": true,
+        "publish_date": "2025-05-01 10:00:00",
+        "created_at": "2025-05-01 10:00:00",
+        "updated_at": "2025-05-01 10:00:00"
+      },
+      {
+        "id": 3,
+        "title": "Beasiswa Prestasi Akademik 2025",
+        "content": "UNIMMAN menyediakan beasiswa prestasi akademik untuk mahasiswa berprestasi. Syarat dan ketentuan dapat dilihat di website resmi universitas. Pendaftaran dibuka mulai 1 Februari 2025.",
+        "type": "BEASISWA",
+        "banner_image": "/assets/banners/beasiswa-2025.jpg",
+        "is_published": true,
+        "publish_date": "2025-01-20 09:00:00",
+        "created_at": "2025-01-20 09:00:00",
+        "updated_at": "2025-01-20 09:00:00"
+      },
+      {
+        "id": 4,
+        "title": "Pengumuman Hasil Seleksi Gelombang 1",
+        "content": "Hasil seleksi PMB Gelombang 1 akan diumumkan pada tanggal 25 Juni 2025 melalui website resmi dan portal PMB. Calon mahasiswa dapat mengecek status kelulusan dengan login menggunakan nomor pendaftaran.",
+        "type": "PENGUMUMAN",
+        "banner_image": "/assets/banners/hasil-seleksi-2025.jpg",
+        "is_published": false,
+        "publish_date": "2025-06-25 14:00:00",
+        "created_at": "2025-06-20 10:00:00",
+        "updated_at": "2025-06-20 10:00:00"
+      },
+      {
+        "id": 5,
+        "title": "Panduan Daftar Ulang Mahasiswa Baru",
+        "content": "Mahasiswa yang dinyatakan lulus seleksi wajib melakukan daftar ulang sesuai jadwal yang telah ditentukan. Bawa dokumen asli dan fotokopi sesuai persyaratan yang telah ditetapkan.",
+        "type": "INFORMASI",
+        "banner_image": "/assets/banners/daftar-ulang-2025.jpg",
+        "is_published": false,
+        "publish_date": "2025-07-01 08:00:00",
+        "created_at": "2025-06-25 15:00:00",
+        "updated_at": "2025-06-25 15:00:00"
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "name": "Super Administrator",
+        "email": "admin@unimman.ac.id",
+        "username": "superadmin",
+        "role": "SUPER_ADMIN",
+        "is_active": true,
+        "email_verified_at": "2024-01-01 08:00:00",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 2,
+        "name": "Admin PMB",
+        "email": "pmb@unimman.ac.id",
+        "username": "adminpmb",
+        "role": "ADMIN",
+        "is_active": true,
+        "email_verified_at": "2024-01-01 08:00:00",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3,
+        "name": "Operator PMB",
+        "email": "operator@unimman.ac.id",
+        "username": "operator",
+        "role": "OPERATOR",
+        "is_active": true,
+        "email_verified_at": "2024-01-01 08:00:00",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 4,
+        "name": "Verifikator Dokumen",
+        "email": "verifikator@unimman.ac.id",
+        "username": "verifikator",
+        "role": "VERIFIER",
+        "is_active": true,
+        "email_verified_at": "2024-01-01 08:00:00",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      }
+    ],
+    "activity_logs": [
+      {
+        "id": 1,
+        "user_id": 2,
+        "action": "CREATE",
+        "description": "Membuat jalur PMB Kader Muhammadiyah 2025",
+        "table_name": "admission_paths",
+        "record_id": 1,
+        "old_values": null,
+        "new_values": "{\"code\":\"PMB_KADER_2025\",\"name\":\"PMB JALUR KADER MUHAMMADIYAH 2025\"}",
+        "ip_address": "192.168.1.100",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "created_at": "2024-12-01 08:15:00"
+      },
+      {
+        "id": 2,
+        "user_id": 3,
+        "action": "UPDATE",
+        "description": "Memverifikasi dokumen pendaftaran PMB2025001",
+        "table_name": "registration_documents",
+        "record_id": 1,
+        "old_values": "{\"verification_status\":\"PENDING\"}",
+        "new_values": "{\"verification_status\":\"APPROVED\",\"verification_notes\":\"Dokumen lengkap dan sesuai\"}",
+        "ip_address": "192.168.1.101",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "created_at": "2025-01-15 11:00:00"
+      },
+      {
+        "id": 3,
+        "user_id": 2,
+        "action": "UPDATE",
+        "description": "Mengubah status pendaftaran PMB2025003 menjadi ACCEPTED",
+        "table_name": "registrations",
+        "record_id": 3,
+        "old_values": "{\"registration_status\":\"VERIFIED\"}",
+        "new_values": "{\"registration_status\":\"ACCEPTED\"}",
+        "ip_address": "192.168.1.100",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "created_at": "2025-02-20 13:30:00"
+      },
+      {
+        "id": 4,
+        "user_id": 1,
+        "action": "CREATE",
+        "description": "Membuat pengumuman PMB Jalur Kader Muhammadiyah 2025",
+        "table_name": "announcements",
+        "record_id": 1,
+        "old_values": null,
+        "new_values": "{\"title\":\"Pembukaan PMB Jalur Kader Muhammadiyah 2025\",\"type\":\"PENGUMUMAN\"}",
+        "ip_address": "192.168.1.99",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "created_at": "2024-12-15 08:30:00"
+      },
+      {
+        "id": 5,
+        "user_id": 4,
+        "action": "UPDATE",
+        "description": "Verifikasi pembayaran untuk pendaftaran PMB2025002",
+        "table_name": "payments",
+        "record_id": 2,
+        "old_values": "{\"payment_status\":\"PENDING\"}",
+        "new_values": "{\"payment_status\":\"SUCCESS\",\"verification_date\":\"2025-02-11 09:00:00\"}",
+        "ip_address": "192.168.1.102",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "created_at": "2025-02-11 09:00:00"
+      }
+    ],
+    "system_settings": [
+      {
+        "id": 1,
+        "key": "app_name",
+        "value": "PMB UNIMMAN",
+        "description": "Nama aplikasi PMB",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 2,
+        "key": "app_version",
+        "value": "1.0.0",
+        "description": "Versi aplikasi PMB",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 3,
+        "key": "max_file_upload",
+        "value": "5120",
+        "description": "Maksimal ukuran file upload dalam KB",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 4,
+        "key": "allowed_file_types",
+        "value": "PDF,JPG,JPEG,PNG",
+        "description": "Tipe file yang diizinkan untuk upload",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 5,
+        "key": "email_smtp_host",
+        "value": "smtp.gmail.com",
+        "description": "SMTP host untuk pengiriman email",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 6,
+        "key": "email_smtp_port",
+        "value": "587",
+        "description": "SMTP port untuk pengiriman email",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 7,
+        "key": "registration_auto_number",
+        "value": "PMB{YEAR}{COUNTER:3}",
+        "description": "Format nomor pendaftaran otomatis",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 8,
+        "key": "payment_auto_number",
+        "value": "PAY{YEAR}{COUNTER:3}",
+        "description": "Format kode pembayaran otomatis",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 9,
+        "key": "maintenance_mode",
+        "value": "false",
+        "description": "Mode maintenance aplikasi",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      },
+      {
+        "id": 10,
+        "key": "registration_open",
+        "value": "true",
+        "description": "Status buka/tutup pendaftaran",
+        "created_at": "2024-01-01 08:00:00",
+        "updated_at": "2024-01-01 08:00:00"
+      }
+    ],
+    "reports_summary": {
+      "total_registrations": 8,
+      "total_paid_registrations": 7,
+      "total_pending_payments": 1,
+      "total_accepted_students": 2,
+      "total_revenue": 1200000.00,
+      "registrations_by_path": {
+        "PMB_KADER_2025": 2,
+        "PMB_REGULER_2025_G1": 5,
+        "PMB_BEASISWA_2025": 1
+      },
+      "registrations_by_program": {
+        "D3-FARMASI": 1,
+        "S1-FARMASI": 2,
+        "S1-KEPERAWATAN": 2,
+        "S1-KEBIDANAN": 1,
+        "S1-GIZI": 0,
+        "S1-KESMAS": 1,
+        "S1-TEKNIK-SIPIL": 1
+      },
+      "registrations_by_gender": {
+        "MALE": 4,
+        "FEMALE": 4
+      },
+      "registrations_by_city": {
+        "Manado": 4,
+        "Bitung": 2,
+        "Tomohon": 1,
+        "Kotamobagu": 1
+      },
+      "monthly_registrations": {
+        "2025-01": 3,
+        "2025-02": 4,
+        "2025-03": 1
+      }
+    }
+  }
+}

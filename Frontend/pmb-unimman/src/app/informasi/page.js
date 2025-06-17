@@ -218,38 +218,24 @@ const InformasiPage = () => {
                         {/* Tabs and Search Row */}
                         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-6 mb-6 lg:mb-8">
 
-                            {/* Tabs */}
-                            <div className="flex flex-wrap gap-2">
-                                <button
-                                    onClick={() => setActiveTab('SEMUA')}
-                                    className={`px-4 lg:px-5 py-2.5 lg:py-3 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${activeTab === 'SEMUA'
-                                        ? 'bg-[#1a81ca] text-white shadow-sm'
-                                        : 'border border-[#1a81ca] bg-white text-[#1a81ca] hover:bg-[#1a81ca] hover:text-white'
+                            {/* Tab Navigation - Konsisten dengan style main page */}
+                            <div className="inline-flex bg-gray-100 rounded-xl p-1.5">
+                                {['SEMUA', 'Informasi', 'Pengumuman'].map((tab) => (
+                                    <button
+                                        key={tab}
+                                        onClick={() => setActiveTab(tab)}
+                                        className={`px-6 lg:px-8 py-3 mx-1 rounded-lg text-sm lg:text-base font-semibold transition-all duration-300 ${
+                                            activeTab === tab
+                                                ? 'bg-[#1a81ca] text-white shadow-md'
+                                                : 'text-gray-600 hover:text-[#1a81ca]'
                                         }`}
-                                >
-                                    Semua
-                                </button>
-                                <button
-                                    onClick={() => setActiveTab('Informasi')}
-                                    className={`px-4 lg:px-5 py-2.5 lg:py-3 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${activeTab === 'Informasi'
-                                        ? 'bg-[#1a81ca] text-white shadow-sm'
-                                        : 'border border-[#1a81ca] bg-white text-[#1a81ca] hover:bg-[#1a81ca] hover:text-white'
-                                        }`}
-                                >
-                                    Informasi
-                                </button>
-                                <button
-                                    onClick={() => setActiveTab('Pengumuman')}
-                                    className={`px-4 lg:px-5 py-2.5 lg:py-3 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${activeTab === 'Pengumuman'
-                                        ? 'bg-[#1a81ca] text-white shadow-sm'
-                                        : 'border border-[#1a81ca] bg-white text-[#1a81ca] hover:bg-[#1a81ca] hover:text-white'
-                                        }`}
-                                >
-                                    Pengumuman
-                                </button>
+                                    >
+                                        {tab === 'SEMUA' ? 'Semua' : tab}
+                                    </button>
+                                ))}
                             </div>
 
-                            {/* Search Box */}
+                            {/* Search Box - Konsisten dengan style main page */}
                             <div className="relative w-full sm:max-w-sm">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                     <svg className="h-4 w-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -261,7 +247,7 @@ const InformasiPage = () => {
                                     placeholder="Cari informasi..."
                                     value={searchQuery}
                                     onChange={handleSearchChange}
-                                    className="w-full pl-10 pr-10 py-2.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a81ca] focus:border-transparent transition-all duration-200 bg-white text-gray-800 placeholder-gray-500"
+                                    className="w-full pl-10 pr-10 py-3 text-sm border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1a81ca] focus:border-[#1a81ca] transition-all duration-200 bg-white text-gray-800 placeholder-gray-500 font-medium"
                                 />
                                 {searchQuery && (
                                     <button
@@ -317,60 +303,66 @@ const InformasiPage = () => {
                                 {filteredData.map((item, index) => (
                                     <div 
                                         key={item.id}
-                                        className={`bg-white rounded-lg shadow-sm border border-gray-200 cursor-pointer transition-all duration-300 hover:border-[#1a81ca] hover:shadow-md overflow-hidden fade-in-up h-[420px] lg:h-[460px] flex flex-col`}
+                                        className={`bg-white rounded-xl shadow-md border border-gray-200 cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-[#1a81ca] hover:transform hover:scale-105 overflow-hidden h-80 lg:h-96 fade-in-up`}
                                         style={{
                                             animationDelay: `${index * 100}ms`,
                                             animationFillMode: 'forwards'
                                         }}
                                         onClick={() => handleDetailClick(item.id)}
                                     >
-                                        {/* 1. Foto Section dengan Label - Fixed Height */}
-                                        <div className="bg-white p-4 lg:p-6 flex items-center justify-center border-b border-gray-100 h-48 lg:h-56 relative flex-shrink-0">
-                                            {/* Type Label - di atas foto */}
-                                            <span className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-medium ${
+                                        {/* Logo Section - Konsisten dengan component */}
+                                        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 lg:p-6 flex items-center justify-center border-b border-blue-100 h-48 lg:h-56 relative">
+                                            {/* Type Label - Positioned at top right */}
+                                            <span className={`absolute top-3 right-3 px-3 py-1.5 rounded-full text-xs font-semibold shadow-sm ${
                                                 item.type === 'Informasi' 
-                                                    ? 'bg-blue-50 text-[#1a81ca]' 
-                                                    : 'bg-orange-50 text-orange-600'
+                                                    ? 'bg-[#1a81ca] text-white' 
+                                                    : 'bg-orange-500 text-white'
                                             }`}>
                                                 {item.type}
                                             </span>
                                             
-                                            <img 
-                                                src="/assets/logo.png" 
-                                                alt="Logo UNIMMAN"
-                                                className="w-16 h-16 lg:w-20 lg:h-20 object-contain"
-                                                onError={(e) => {
-                                                    e.target.style.display = 'none';
-                                                    e.target.parentNode.innerHTML = `
-                                                        <div class="w-16 h-16 lg:w-20 lg:h-20 bg-[#1a81ca] rounded-full flex items-center justify-center">
-                                                            <span class="text-white font-bold text-lg lg:text-xl">U</span>
-                                                        </div>
-                                                    `;
-                                                }}
-                                            />
+                                            <div className="relative">
+                                                <div className="absolute inset-0 bg-[#1a81ca] rounded-full blur-lg opacity-20"></div>
+                                                <img 
+                                                    src="/assets/logo.png" 
+                                                    alt="Logo UNIMMAN"
+                                                    className="relative w-16 h-16 lg:w-20 lg:h-20 object-contain"
+                                                    onError={(e) => {
+                                                        e.target.style.display = 'none';
+                                                        e.target.parentNode.innerHTML = `
+                                                            <div class="relative w-16 h-16 lg:w-20 lg:h-20 bg-[#1a81ca] rounded-full flex items-center justify-center shadow-lg">
+                                                                <span class="text-white font-bold text-lg lg:text-xl">U</span>
+                                                            </div>
+                                                        `;
+                                                    }}
+                                                />
+                                            </div>
                                         </div>
 
-                                        {/* Content Section - Flex grow untuk mengisi sisa ruang */}
-                                        <div className="p-4 lg:p-5 bg-white flex-1 flex flex-col relative">
-                                            {/* 2. Date */}
-                                            <p className="text-sm text-gray-500 mb-3 flex-shrink-0">
-                                                {formatDate(item.created_at)}
-                                            </p>
+                                        {/* Content Section - Konsisten dengan component */}
+                                        <div className="p-4 lg:p-5 bg-white h-32 lg:h-40 relative">
+                                            {/* Tanggal */}
+                                            <div className="flex items-center mb-2">
+                                                <svg className="w-3 h-3 text-gray-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                </svg>
+                                                <p className="text-sm text-gray-500">
+                                                    {formatDate(item.created_at)}
+                                                </p>
+                                            </div>
 
-                                            {/* 3. Judul */}
-                                            <h3 className="font-semibold text-gray-800 text-sm lg:text-base leading-snug line-clamp-2 mb-3 flex-shrink-0">
+                                            {/* Judul */}
+                                            <h3 className="font-semibold text-gray-800 mb-4 text-sm lg:text-base leading-snug pr-2">
                                                 {item.title}
                                             </h3>
 
-                                            {/* 4. Deskripsi - Flex grow untuk mengisi ruang */}
-                                            <p className="text-xs lg:text-sm text-gray-600 flex-1 mb-4">
-                                                {truncateText(item.description)}
-                                            </p>
-
-                                            {/* 5. Lihat Detail - Absolute positioned di pojok kanan bawah */}
+                                            {/* Link - Positioned at Bottom Right */}
                                             <div className="absolute bottom-4 lg:bottom-5 right-4 lg:right-5">
-                                                <div className="text-[#1a81ca] font-medium text-sm cursor-pointer hover:text-[#1565a0] transition-colors duration-200">
+                                                <div className="inline-flex items-center text-[#1a81ca] hover:text-[#1565a0] font-medium text-sm cursor-pointer transition-colors duration-200">
                                                     Lihat Detail
+                                                    <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
