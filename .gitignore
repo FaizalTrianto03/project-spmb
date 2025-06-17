@@ -1,0 +1,18 @@
+# node_modules dan environment
+node_modules/
+.env
+
+# log dan sistem
+*.log
+.DS_Store
+Thumbs.db
+
+# build hasil
+dist/
+build/
+.next/
+out/
+
+# cache editor
+.vscode/
+.idea/
