@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 255);
             $table->text('content');
-            $table->enum('type', ['INFORMASI', 'PENGUMUMAN']);
+            $table->enum('type', ['INFORMASI', 'PENGUMUMAN', 'BEASISWA']);
             $table->string('banner_image', 500)->nullable();
             $table->boolean('is_published')->default(false);
             $table->timestamp('publish_date')->nullable();

@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('email', 100)->unique();
             // Menggunakan 'password' sesuai konvensi Laravel, hashing ditangani otomatis
             $table->string('password');
-            $table->enum('role', ['ADMIN', 'OPERATOR', 'STUDENT']);
+            $table->enum('role', ['SUPER_ADMIN', 'ADMIN', 'OPERATOR', 'VERIFIER', 'STUDENT']);
             // onDelete('set null') agar akun user tidak ikut terhapus jika data pendaftarannya dihapus
             $table->foreignId('registration_id')->nullable()->constrained()->onDelete('set null');
             $table->boolean('is_active')->default(true);

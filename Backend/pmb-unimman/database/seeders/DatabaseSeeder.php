@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +13,45 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        Model::unguard(); // Izinkan mass assignment untuk sementara
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // Nonaktifkan foreign key check untuk kelancaran seeder
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
+        // Kosongkan tabel sebelum diisi (dalam urutan terbalik dari dependensi)
+        DB::table('payments')->truncate();
+        DB::table('registration_documents')->truncate();
+        DB::table('registrations')->truncate();
+        DB::table('users')->truncate();
+        DB::table('admission_path_programs')->truncate();
+        DB::table('admission_requirements')->truncate();
+        DB::table('schools')->truncate();
+        DB::table('cities')->truncate();
+        DB::table('provinces')->truncate();
+        DB::table('admission_paths')->truncate();
+        DB::table('study_programs')->truncate();
+        DB::table('universities')->truncate();
+        DB::table('announcements')->truncate();
+
+        // Panggil semua seeder dalam urutan yang benar
+        $this->call([
+            UniversitySeeder::class,
+            ProvinceSeeder::class,
+            CitySeeder::class,
+            StudyProgramSeeder::class,
+            AdmissionPathSeeder::class,
+            SchoolSeeder::class,
+            AdmissionRequirementSeeder::class,
+            AdmissionPathProgramSeeder::class,
+            UserSeeder::class, // Admin/Operator Users
+            RegistrationSeeder::class,
+            RegistrationDocumentSeeder::class,
+            PaymentSeeder::class,
+            AnnouncementSeeder::class,
         ]);
+
+        // Aktifkan kembali foreign key check
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        Model::reguard();
     }
 }
