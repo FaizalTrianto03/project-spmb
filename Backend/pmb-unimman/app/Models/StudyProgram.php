@@ -61,9 +61,8 @@ class StudyProgram extends Model
      */
     public function admissionPaths(): BelongsToMany
     {
-        // Parameter kedua adalah nama tabel pivot yang kita buat sebelumnya.
+        // Mengambil pivot 'quota' dan 'created_at' secara eksplisit
         return $this->belongsToMany(AdmissionPath::class, 'admission_path_programs')
-            ->withPivot('quota') // Jika ingin mengambil data kuota spesifik dari tabel pivot
-            ->withTimestamps(); // Jika tabel pivot memiliki created_at/updated_at
+            ->withPivot('quota', 'created_at');
     }
 }

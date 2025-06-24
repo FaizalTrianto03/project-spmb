@@ -77,9 +77,9 @@ class AdmissionPath extends Model
      */
     public function studyPrograms(): BelongsToMany
     {
+        // Mengambil pivot 'quota' dan 'created_at' secara eksplisit
         return $this->belongsToMany(StudyProgram::class, 'admission_path_programs')
-            ->withPivot('quota')
-            ->withTimestamps();
+            ->withPivot('quota', 'created_at');
     }
 
     /**

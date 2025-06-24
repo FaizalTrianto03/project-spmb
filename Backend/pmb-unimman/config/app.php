@@ -123,4 +123,11 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+
+    // 'providers' => [
+    //     // ... provider lain
+    //     App\Providers\FortifyServiceProvider::class, // <-- Tambahkan ini
+    //     App\Providers\RouteServiceProvider::class,
+    // ],
+
 ];
