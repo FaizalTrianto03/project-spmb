@@ -11,13 +11,13 @@
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   [Simple, fast routing engine](https://laravel.com/docs/routing).
+-   [Powerful dependency injection container](https://laravel.com/docs/container).
+-   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+-   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+-   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+-   [Robust background job processing](https://laravel.com/docs/queues).
+-   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
@@ -35,14 +35,14 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 
 ### Premium Partners
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+-   **[Vehikl](https://vehikl.com)**
+-   **[Tighten Co.](https://tighten.co)**
+-   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+-   **[64 Robots](https://64robots.com)**
+-   **[Curotec](https://www.curotec.com/services/technologies/laravel)**
+-   **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+-   **[Redberry](https://redberry.international/laravel-development)**
+-   **[Active Logic](https://activelogic.com)**
 
 ## Contributing
 
@@ -59,3 +59,119 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+---
+
+#### **Langkah 0: Prasyarat**
+
+Pastikan Anda sudah menginstal environment yang dibutuhkan di laptopnya:
+
+-   PHP (versi yang sesuai dengan proyek Anda)
+-   Composer
+-   Database Server (dalam kasus ini, MySQL)
+
+#### **Langkah 1: Clone Proyek dari GitHub**
+
+Ini adalah langkah awal yang harus anda dilakukan.
+
+```bash
+git clone https://github.com/username/nama-proyek.git
+```
+
+#### **Langkah 2: Masuk ke Direktori Proyek**
+
+Setelah proses clone selesai, Anda harus masuk ke dalam folder proyeknya.
+
+```bash
+cd nama-proyek
+```
+
+#### **Langkah 3: Install Dependensi PHP (Composer)**
+
+Langkah ini akan mengunduh semua paket yang dibutuhkan oleh Laravel (termasuk Laravel-nya sendiri, Fortify, Sanctum, dll) yang tercatat di file `composer.json`.
+
+```bash
+composer install
+```
+
+#### **Langkah 4: Siapkan File Environment (`.env`)**
+
+File `.env` berisi semua konfigurasi khusus untuk sebuah environment (seperti koneksi database) dan **tidak pernah** di-push ke Git demi keamanan. Anda harus membuat file `.env` milik sendiri.
+
+```bash
+cp .env.example .env
+```
+
+Perintah ini menyalin file `template` (.env.example) menjadi file `.env` yang akan digunakan.
+
+#### **Langkah 5: Generate Kunci Aplikasi**
+
+Setiap aplikasi Laravel membutuhkan kunci enkripsi yang unik. Tanpa ini, aplikasi tidak akan berjalan.
+
+```bash
+php artisan key:generate
+```
+
+Perintah ini akan membuat kunci baru dan otomatis menyimpannya di dalam file `.env`.
+
+#### **Langkah 6: Konfigurasi Database**
+
+Ini adalah langkah manual yang penting.
+
+1.  Anda harus membuat sebuah database baru di MySQL-nya (misalnya via phpMyAdmin, HeidiSQL, dll.). Nama database bisa sama dengan yang Anda gunakan atau berbeda.
+2.  Buka file `.env` yang baru saja dibuat.
+3.  Ubah baris `DB_*` agar sesuai dengan konfigurasi database **di laptop Anda**.
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=pmb_unimman # Nama database
+    DB_USERNAME=root # Username DB
+    DB_PASSWORD= # Password DB (kosongkan jika tidak ada)
+    ```
+
+#### **Langkah 7: Migrasi dan Seeding Database**
+
+Setelah koneksi database diatur, sekarang saatnya membangun struktur tabel dan mengisinya dengan data awal.
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+-   `migrate:fresh`: Akan menghapus semua tabel (jika ada) dan menjalankan ulang semua file migrasi dari awal.
+-   `--seed`: Setelah tabel berhasil dibuat, perintah ini akan menjalankan `DatabaseSeeder` untuk mengisi semua data dummy.
+
+Dengan perintah ini, database Anda akan memiliki struktur dan isi yang sama persis dengan database Anda.
+
+#### **Langkah 8: Buat Storage Link**
+
+Sama seperti yang kita lakukan sebelumnya, ini dibutuhkan agar file yang di-upload bisa diakses.
+
+```bash
+php artisan storage:link
+```
+
+#### **Langkah 9: Jalankan Server Pengembangan**
+
+Langkah terakhir\! Anda sekarang bisa menjalankan server lokal dan mulai bekerja.
+
+```bash
+php artisan serve
+```
+
+Proyek sekarang seharusnya sudah berjalan di `http://127.0.0.1:8000` di laptopnya.
+
+---
+
+### **PENTING: Pastikan `.gitignore` Anda Benar**
+
+Untuk memastikan kolaborasi berjalan lancar, pastikan file `.gitignore` Anda (yang ada di root proyek) berisi baris-baris berikut agar file-file sensitif dan tidak perlu tidak terkirim ke GitHub:
+
+```
+/vendor
+/node_modules
+.env
+/public/storage
+```
+
+File `.gitignore` standar Laravel biasanya sudah mencakup ini, tetapi selalu baik untuk memastikannya.
