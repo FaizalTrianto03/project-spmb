@@ -1,0 +1,1280 @@
+
+{
+  "database_name": "pmb_unimman",
+  "database_type": "MySQL/PostgreSQL",
+  "tables": {
+    "universities": {
+      "description": "Tabel master data universitas",
+      "columns": {
+        "id": {
+          "type": "INT",
+          "constraints": ["PRIMARY KEY", "AUTO_INCREMENT"],
+          "description": "ID unik universitas"
+        },
+        "name": {
+          "type": "VARCHAR(255)",
+          "constraints": ["NOT NULL"],
+          "description": "Nama universitas",
+          "example": "Universitas Muhammadiyah Manado"
+        },
+        "address": {
+          "type": "TEXT",
+          "constraints": [],
+          "description": "Alamat lengkap universitas"
+        },
+        "phone": {
+          "type": "VARCHAR(20)",
+          "constraints": [],
+          "description": "Nomor telepon universitas"
+        },
+        "email": {
+          "type": "VARCHAR(100)",
+          "constraints": [],
+          "description": "Email resmi universitas"
+        },
+        "website": {
+          "type": "VARCHAR(255)",
+          "constraints": [],
+          "description": "Website resmi universitas"
+        },
+        "logo_url": {
+          "type": "VARCHAR(255)",
+          "constraints": [],
+          "description": "URL logo universitas"
+        },
+        "created_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu pembuatan record"
+        },
+        "updated_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"],
+          "description": "Waktu update terakhir"
+        }
+      },
+      "indexes": []
+    },
+    "study_programs": {
+      "description": "Tabel master data program studi",
+      "columns": {
+        "id": {
+          "type": "INT",
+          "constraints": ["PRIMARY KEY", "AUTO_INCREMENT"],
+          "description": "ID unik program studi"
+        },
+        "code": {
+          "type": "VARCHAR(20)",
+          "constraints": ["NOT NULL", "UNIQUE"],
+          "description": "Kode program studi",
+          "example": "D3-FARMASI, S1-FARMASI"
+        },
+        "name": {
+          "type": "VARCHAR(255)",
+          "constraints": ["NOT NULL"],
+          "description": "Nama program studi"
+        },
+        "level": {
+          "type": "ENUM('D3', 'S1', 'PROFESI')",
+          "constraints": ["NOT NULL"],
+          "description": "Jenjang pendidikan"
+        },
+        "accreditation": {
+          "type": "VARCHAR(50)",
+          "constraints": [],
+          "description": "Status akreditasi",
+          "example": "Baik Sekali"
+        },
+        "website": {
+          "type": "VARCHAR(255)",
+          "constraints": [],
+          "description": "Website program studi"
+        },
+        "quota": {
+          "type": "INT",
+          "constraints": ["DEFAULT 0"],
+          "description": "Daya tampung program studi"
+        },
+        "is_active": {
+          "type": "BOOLEAN",
+          "constraints": ["DEFAULT TRUE"],
+          "description": "Status aktif program studi"
+        },
+        "created_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu pembuatan record"
+        },
+        "updated_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"],
+          "description": "Waktu update terakhir"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_study_programs_code",
+          "type": "UNIQUE",
+          "columns": ["code"]
+        },
+        {
+          "name": "idx_study_programs_level",
+          "type": "INDEX",
+          "columns": ["level"]
+        }
+      ]
+    },
+    "admission_paths": {
+      "description": "Tabel master data jalur pendaftaran",
+      "columns": {
+        "id": {
+          "type": "INT",
+          "constraints": ["PRIMARY KEY", "AUTO_INCREMENT"],
+          "description": "ID unik jalur pendaftaran"
+        },
+        "code": {
+          "type": "VARCHAR(50)",
+          "constraints": ["NOT NULL", "UNIQUE"],
+          "description": "Kode jalur pendaftaran",
+          "example": "PMB_KADER_2025"
+        },
+        "name": {
+          "type": "VARCHAR(255)",
+          "constraints": ["NOT NULL"],
+          "description": "Nama jalur pendaftaran",
+          "example": "PMB JALUR KADER MUHAMMADIYAH 2025"
+        },
+        "description": {
+          "type": "TEXT",
+          "constraints": [],
+          "description": "Deskripsi jalur pendaftaran"
+        },
+        "registration_fee": {
+          "type": "DECIMAL(10,2)",
+          "constraints": ["DEFAULT 0"],
+          "description": "Biaya pendaftaran"
+        },
+        "study_system": {
+          "type": "VARCHAR(50)",
+          "constraints": [],
+          "description": "Sistem kuliah",
+          "example": "Reguler"
+        },
+        "target_students": {
+          "type": "TEXT",
+          "constraints": [],
+          "description": "Target mahasiswa",
+          "example": "Khusus Peserta Didik Baru Non Transfer"
+        },
+        "schedule": {
+          "type": "VARCHAR(100)",
+          "constraints": [],
+          "description": "Jadwal kuliah",
+          "example": "Pagi-Sore"
+        },
+        "start_date": {
+          "type": "DATE",
+          "constraints": ["NOT NULL"],
+          "description": "Tanggal mulai pendaftaran"
+        },
+        "end_date": {
+          "type": "DATE",
+          "constraints": ["NOT NULL"],
+          "description": "Tanggal akhir pendaftaran"
+        },
+        "wave": {
+          "type": "VARCHAR(50)",
+          "constraints": [],
+          "description": "Gelombang pendaftaran",
+          "example": "Gelombang 1"
+        },
+        "academic_year": {
+          "type": "VARCHAR(10)",
+          "constraints": ["NOT NULL"],
+          "description": "Tahun akademik",
+          "example": "2025"
+        },
+        "semester": {
+          "type": "ENUM('GANJIL', 'GENAP')",
+          "constraints": ["NOT NULL"],
+          "description": "Semester"
+        },
+        "is_active": {
+          "type": "BOOLEAN",
+          "constraints": ["DEFAULT TRUE"],
+          "description": "Status aktif jalur pendaftaran"
+        },
+        "created_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu pembuatan record"
+        },
+        "updated_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"],
+          "description": "Waktu update terakhir"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_admission_paths_code",
+          "type": "UNIQUE",
+          "columns": ["code"]
+        },
+        {
+          "name": "idx_admission_paths_dates",
+          "type": "INDEX",
+          "columns": ["start_date", "end_date"]
+        }
+      ]
+    },
+    "provinces": {
+      "description": "Tabel master data provinsi",
+      "columns": {
+        "id": {
+          "type": "INT",
+          "constraints": ["PRIMARY KEY"],
+          "description": "ID provinsi"
+        },
+        "name": {
+          "type": "VARCHAR(100)",
+          "constraints": ["NOT NULL"],
+          "description": "Nama provinsi"
+        },
+        "created_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu pembuatan record"
+        }
+      },
+      "indexes": []
+    },
+    "cities": {
+      "description": "Tabel master data kota/kabupaten",
+      "columns": {
+        "id": {
+          "type": "INT",
+          "constraints": ["PRIMARY KEY"],
+          "description": "ID kota/kabupaten"
+        },
+        "province_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID provinsi",
+          "foreign_key": {
+            "table": "provinces",
+            "column": "id",
+            "on_delete": "CASCADE"
+          }
+        },
+        "name": {
+          "type": "VARCHAR(100)",
+          "constraints": ["NOT NULL"],
+          "description": "Nama kota/kabupaten"
+        },
+        "created_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu pembuatan record"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_cities_province",
+          "type": "INDEX",
+          "columns": ["province_id"]
+        }
+      ]
+    },
+    "schools": {
+      "description": "Tabel master data sekolah",
+      "columns": {
+        "id": {
+          "type": "INT",
+          "constraints": ["PRIMARY KEY", "AUTO_INCREMENT"],
+          "description": "ID unik sekolah"
+        },
+        "npsn": {
+          "type": "VARCHAR(20)",
+          "constraints": ["UNIQUE"],
+          "description": "Nomor Pokok Sekolah Nasional"
+        },
+        "name": {
+          "type": "VARCHAR(255)",
+          "constraints": ["NOT NULL"],
+          "description": "Nama sekolah"
+        },
+        "type": {
+          "type": "ENUM('SMA', 'SMK', 'MA', 'LAINNYA')",
+          "constraints": ["NOT NULL"],
+          "description": "Jenis sekolah"
+        },
+        "province_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID provinsi",
+          "foreign_key": {
+            "table": "provinces",
+            "column": "id",
+            "on_delete": "CASCADE"
+          }
+        },
+        "city_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID kota/kabupaten",
+          "foreign_key": {
+            "table": "cities",
+            "column": "id",
+            "on_delete": "CASCADE"
+          }
+        },
+        "is_verified": {
+          "type": "BOOLEAN",
+          "constraints": ["DEFAULT FALSE"],
+          "description": "Status verifikasi sekolah"
+        },
+        "created_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu pembuatan record"
+        },
+        "updated_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"],
+          "description": "Waktu update terakhir"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_schools_npsn",
+          "type": "UNIQUE",
+          "columns": ["npsn"]
+        },
+        {
+          "name": "idx_schools_location",
+          "type": "INDEX",
+          "columns": ["province_id", "city_id"]
+        }
+      ]
+    },
+    "admission_path_programs": {
+      "description": "Tabel relasi jalur pendaftaran dengan program studi",
+      "columns": {
+        "id": {
+          "type": "INT",
+          "constraints": ["PRIMARY KEY", "AUTO_INCREMENT"],
+          "description": "ID unik relasi"
+        },
+        "admission_path_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID jalur pendaftaran",
+          "foreign_key": {
+            "table": "admission_paths",
+            "column": "id",
+            "on_delete": "CASCADE"
+          }
+        },
+        "study_program_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID program studi",
+          "foreign_key": {
+            "table": "study_programs",
+            "column": "id",
+            "on_delete": "CASCADE"
+          }
+        },
+        "quota": {
+          "type": "INT",
+          "constraints": ["DEFAULT 0"],
+          "description": "Kuota untuk jalur dan program studi tertentu"
+        },
+        "created_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu pembuatan record"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_admission_path_programs_unique",
+          "type": "UNIQUE",
+          "columns": ["admission_path_id", "study_program_id"]
+        }
+      ]
+    },
+    "registrations": {
+      "description": "Tabel data pendaftaran mahasiswa",
+      "columns": {
+        "id": {
+          "type": "INT",
+          "constraints": ["PRIMARY KEY", "AUTO_INCREMENT"],
+          "description": "ID unik pendaftaran"
+        },
+        "registration_number": {
+          "type": "VARCHAR(50)",
+          "constraints": ["NOT NULL", "UNIQUE"],
+          "description": "Nomor pendaftaran auto-generated"
+        },
+        "admission_path_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID jalur pendaftaran",
+          "foreign_key": {
+            "table": "admission_paths",
+            "column": "id",
+            "on_delete": "RESTRICT"
+          }
+        },
+        "full_name": {
+          "type": "VARCHAR(255)",
+          "constraints": ["NOT NULL"],
+          "description": "Nama lengkap calon mahasiswa"
+        },
+        "gender": {
+          "type": "ENUM('MALE', 'FEMALE')",
+          "constraints": ["NOT NULL"],
+          "description": "Jenis kelamin"
+        },
+        "mobile_number": {
+          "type": "VARCHAR(20)",
+          "constraints": ["NOT NULL"],
+          "description": "Nomor telepon"
+        },
+        "email": {
+          "type": "VARCHAR(100)",
+          "constraints": ["NOT NULL"],
+          "description": "Alamat email"
+        },
+        "date_of_birth": {
+          "type": "DATE",
+          "constraints": ["NOT NULL"],
+          "description": "Tanggal lahir"
+        },
+        "place_of_birth": {
+          "type": "VARCHAR(100)",
+          "constraints": ["NOT NULL"],
+          "description": "Tempat lahir"
+        },
+        "nationality": {
+          "type": "VARCHAR(50)",
+          "constraints": ["NOT NULL", "DEFAULT 'Indonesia'"],
+          "description": "Kewarganegaraan"
+        },
+        "nik": {
+          "type": "VARCHAR(20)",
+          "constraints": ["NOT NULL", "UNIQUE"],
+          "description": "Nomor Induk Kependudukan"
+        },
+        "province_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID provinsi asal sekolah",
+          "foreign_key": {
+            "table": "provinces",
+            "column": "id",
+            "on_delete": "RESTRICT"
+          }
+        },
+        "city_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID kota asal sekolah",
+          "foreign_key": {
+            "table": "cities",
+            "column": "id",
+            "on_delete": "RESTRICT"
+          }
+        },
+        "school_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID sekolah asal",
+          "foreign_key": {
+            "table": "schools",
+            "column": "id",
+            "on_delete": "RESTRICT"
+          }
+        },
+        "school_specialization": {
+          "type": "VARCHAR(100)",
+          "constraints": ["NOT NULL"],
+          "description": "Jurusan sekolah",
+          "example": "IPA, IPS"
+        },
+        "graduation_year": {
+          "type": "YEAR",
+          "constraints": ["NOT NULL"],
+          "description": "Tahun lulus"
+        },
+        "first_choice_program_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID program studi pilihan pertama",
+          "foreign_key": {
+            "table": "study_programs",
+            "column": "id",
+            "on_delete": "RESTRICT"
+          }
+        },
+        "second_choice_program_id": {
+          "type": "INT",
+          "constraints": ["NULL"],
+          "description": "ID program studi pilihan kedua",
+          "foreign_key": {
+            "table": "study_programs",
+            "column": "id",
+            "on_delete": "RESTRICT"
+          }
+        },
+        "registration_status": {
+          "type": "ENUM('DRAFT', 'SUBMITTED', 'VERIFIED', 'ACCEPTED', 'REJECTED')",
+          "constraints": ["NOT NULL", "DEFAULT 'DRAFT'"],
+          "description": "Status pendaftaran"
+        },
+        "payment_status": {
+          "type": "ENUM('PENDING', 'PAID', 'FAILED')",
+          "constraints": ["NOT NULL", "DEFAULT 'PENDING'"],
+          "description": "Status pembayaran"
+        },
+        "created_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu pembuatan record"
+        },
+        "updated_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"],
+          "description": "Waktu update terakhir"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_registrations_number",
+          "type": "UNIQUE",
+          "columns": ["registration_number"]
+        },
+        {
+          "name": "idx_registrations_email",
+          "type": "INDEX",
+          "columns": ["email"]
+        },
+        {
+          "name": "idx_registrations_nik",
+          "type": "UNIQUE",
+          "columns": ["nik"]
+        },
+        {
+          "name": "idx_registrations_mobile",
+          "type": "INDEX",
+          "columns": ["mobile_number"]
+        },
+        {
+          "name": "idx_registrations_status",
+          "type": "INDEX",
+          "columns": ["registration_status"]
+        },
+        {
+          "name": "idx_registrations_payment",
+          "type": "INDEX",
+          "columns": ["payment_status"]
+        },
+        {
+          "name": "idx_registrations_path",
+          "type": "INDEX",
+          "columns": ["admission_path_id"]
+        }
+      ]
+    },
+    "admission_requirements": {
+      "description": "Tabel persyaratan pendaftaran",
+      "columns": {
+        "id": {
+          "type": "INT",
+          "constraints": ["PRIMARY KEY", "AUTO_INCREMENT"],
+          "description": "ID unik persyaratan"
+        },
+        "admission_path_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID jalur pendaftaran",
+          "foreign_key": {
+            "table": "admission_paths",
+            "column": "id",
+            "on_delete": "CASCADE"
+          }
+        },
+        "requirement_name": {
+          "type": "VARCHAR(255)",
+          "constraints": ["NOT NULL"],
+          "description": "Nama persyaratan"
+        },
+        "description": {
+          "type": "TEXT",
+          "constraints": [],
+          "description": "Deskripsi persyaratan"
+        },
+        "is_mandatory": {
+          "type": "BOOLEAN",
+          "constraints": ["DEFAULT TRUE"],
+          "description": "Apakah wajib"
+        },
+        "file_type": {
+          "type": "VARCHAR(50)",
+          "constraints": [],
+          "description": "Tipe file yang diterima",
+          "example": "PDF, JPG, PNG"
+        },
+        "max_file_size": {
+          "type": "INT",
+          "constraints": ["DEFAULT 2048"],
+          "description": "Ukuran maksimal file dalam KB"
+        },
+        "created_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu pembuatan record"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_requirements_path",
+          "type": "INDEX",
+          "columns": ["admission_path_id"]
+        }
+      ]
+    },
+    "registration_documents": {
+      "description": "Tabel dokumen pendaftaran yang diupload",
+      "columns": {
+        "id": {
+          "type": "INT",
+          "constraints": ["PRIMARY KEY", "AUTO_INCREMENT"],
+          "description": "ID unik dokumen"
+        },
+        "registration_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID pendaftaran",
+          "foreign_key": {
+            "table": "registrations",
+            "column": "id",
+            "on_delete": "CASCADE"
+          }
+        },
+        "requirement_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID persyaratan",
+          "foreign_key": {
+            "table": "admission_requirements",
+            "column": "id",
+            "on_delete": "CASCADE"
+          }
+        },
+        "file_name": {
+          "type": "VARCHAR(255)",
+          "constraints": ["NOT NULL"],
+          "description": "Nama file asli"
+        },
+        "file_path": {
+          "type": "VARCHAR(500)",
+          "constraints": ["NOT NULL"],
+          "description": "Path file di server"
+        },
+        "file_size": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "Ukuran file dalam bytes"
+        },
+        "upload_date": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu upload"
+        },
+        "verification_status": {
+          "type": "ENUM('PENDING', 'APPROVED', 'REJECTED')",
+          "constraints": ["DEFAULT 'PENDING'"],
+          "description": "Status verifikasi dokumen"
+        },
+        "verification_notes": {
+          "type": "TEXT",
+          "constraints": [],
+          "description": "Catatan verifikasi"
+        },
+        "created_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu pembuatan record"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_documents_registration",
+          "type": "INDEX",
+          "columns": ["registration_id"]
+        },
+        {
+          "name": "idx_documents_verification",
+          "type": "INDEX",
+          "columns": ["verification_status"]
+        }
+      ]
+    },
+    "payments": {
+      "description": "Tabel pembayaran pendaftaran",
+      "columns": {
+        "id": {
+          "type": "INT",
+          "constraints": ["PRIMARY KEY", "AUTO_INCREMENT"],
+          "description": "ID unik pembayaran"
+        },
+        "registration_id": {
+          "type": "INT",
+          "constraints": ["NOT NULL"],
+          "description": "ID pendaftaran",
+          "foreign_key": {
+            "table": "registrations",
+            "column": "id",
+            "on_delete": "CASCADE"
+          }
+        },
+        "payment_code": {
+          "type": "VARCHAR(50)",
+          "constraints": ["NOT NULL", "UNIQUE"],
+          "description": "Kode pembayaran unik"
+        },
+        "amount": {
+          "type": "DECIMAL(10,2)",
+          "constraints": ["NOT NULL"],
+          "description": "Jumlah pembayaran"
+        },
+        "payment_method": {
+          "type": "VARCHAR(50)",
+          "constraints": [],
+          "description": "Metode pembayaran"
+        },
+        "payment_date": {
+          "type": "TIMESTAMP",
+          "constraints": [],
+          "description": "Waktu pembayaran"
+        },
+        "payment_status": {
+          "type": "ENUM('PENDING', 'SUCCESS', 'FAILED', 'EXPIRED')",
+          "constraints": ["DEFAULT 'PENDING'"],
+          "description": "Status pembayaran"
+        },
+        "payment_proof": {
+          "type": "VARCHAR(500)",
+          "constraints": [],
+          "description": "Path file bukti pembayaran"
+        },
+        "verification_date": {
+          "type": "TIMESTAMP",
+          "constraints": [],
+          "description": "Waktu verifikasi pembayaran"
+        },
+        "created_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu pembuatan record"
+        },
+        "updated_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"],
+          "description": "Waktu update terakhir"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_payments_code",
+          "type": "UNIQUE",
+          "columns": ["payment_code"]
+        },
+        {
+          "name": "idx_payments_registration",
+          "type": "INDEX",
+          "columns": ["registration_id"]
+        },
+        {
+          "name": "idx_payments_status",
+          "type": "INDEX",
+          "columns": ["payment_status"]
+        }
+      ]
+    },
+    "announcements": {
+      "description": "Tabel informasi dan pengumuman",
+      "columns": {
+        "id": {
+          "type": "INT",
+          "constraints": ["PRIMARY KEY", "AUTO_INCREMENT"],
+          "description": "ID unik pengumuman"
+        },
+        "title": {
+          "type": "VARCHAR(255)",
+          "constraints": ["NOT NULL"],
+          "description": "Judul pengumuman"
+        },
+        "content": {
+          "type": "TEXT",
+          "constraints": ["NOT NULL"],
+          "description": "Isi pengumuman"
+        },
+        "type": {
+          "type": "ENUM('INFORMASI', 'PENGUMUMAN')",
+          "constraints": ["NOT NULL"],
+          "description": "Jenis pengumuman"
+        },
+        "banner_image": {
+          "type": "VARCHAR(500)",
+          "constraints": [],
+          "description": "Path gambar banner"
+        },
+        "is_published": {
+          "type": "BOOLEAN",
+          "constraints": ["DEFAULT FALSE"],
+          "description": "Status publikasi"
+        },
+        "publish_date": {
+          "type": "TIMESTAMP",
+          "constraints": [],
+          "description": "Waktu publikasi"
+        },
+        "created_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu pembuatan record"
+        },
+        "updated_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"],
+          "description": "Waktu update terakhir"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_announcements_published",
+          "type": "INDEX",
+          "columns": ["is_published", "publish_date"]
+        },
+        {
+          "name": "idx_announcements_type",
+          "type": "INDEX",
+          "columns": ["type"]
+        }
+      ]
+    },
+    "users": {
+      "description": "Tabel manajemen pengguna sistem",
+      "columns": {
+        "id": {
+          "type": "INT",
+          "constraints": ["PRIMARY KEY", "AUTO_INCREMENT"],
+          "description": "ID unik pengguna"
+        },
+        "username": {
+          "type": "VARCHAR(50)",
+          "constraints": ["NOT NULL", "UNIQUE"],
+          "description": "Username untuk login"
+        },
+        "email": {
+          "type": "VARCHAR(100)",
+          "constraints": ["NOT NULL", "UNIQUE"],
+          "description": "Email pengguna"
+        },
+        "password_hash": {
+          "type": "VARCHAR(255)",
+          "constraints": ["NOT NULL"],
+          "description": "Hash password"
+        },
+        "role": {
+          "type": "ENUM('ADMIN', 'OPERATOR', 'STUDENT')",
+          "constraints": ["NOT NULL"],
+          "description": "Role pengguna"
+        },
+        "registration_id": {
+          "type": "INT",
+          "constraints": ["NULL"],
+          "description": "ID pendaftaran (untuk role STUDENT)",
+          "foreign_key": {
+            "table": "registrations",
+            "column": "id",
+            "on_delete": "SET NULL"
+          }
+        },
+        "is_active": {
+          "type": "BOOLEAN",
+          "constraints": ["DEFAULT TRUE"],
+          "description": "Status aktif pengguna"
+        },
+        "last_login": {
+          "type": "TIMESTAMP",
+          "constraints": [],
+          "description": "Waktu login terakhir"
+        },
+        "created_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP"],
+          "description": "Waktu pembuatan record"
+        },
+        "updated_at": {
+          "type": "TIMESTAMP",
+          "constraints": ["DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"],
+          "description": "Waktu update terakhir"
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_users_username",
+          "type": "UNIQUE",
+          "columns": ["username"]
+        },
+        {
+          "name": "idx_users_email",
+          "type": "UNIQUE",
+          "columns": ["email"]
+        },
+        {
+          "name": "idx_users_role",
+          "type": "INDEX",
+          "columns": ["role"]
+        }
+      ]
+    }
+  },
+  "relationships": {
+    "one_to_many": [
+      {
+        "parent_table": "provinces",
+        "child_table": "cities",
+        "foreign_key": "province_id",
+        "description": "Satu provinsi memiliki banyak kota/kabupaten"
+      },
+      {
+        "parent_table": "provinces",
+        "child_table": "schools",
+        "foreign_key": "province_id",
+        "description": "Satu provinsi memiliki banyak sekolah"
+      },
+      {
+        "parent_table": "cities",
+        "child_table": "schools",
+        "foreign_key": "city_id",
+        "description": "Satu kota memiliki banyak sekolah"
+      },
+      {
+        "parent_table": "admission_paths",
+        "child_table": "registrations",
+        "foreign_key": "admission_path_id",
+        "description": "Satu jalur pendaftaran memiliki banyak pendaftaran"
+      },
+      {
+        "parent_table": "admission_paths",
+        "child_table": "admission_requirements",
+        "foreign_key": "admission_path_id",
+        "description": "Satu jalur pendaftaran memiliki banyak persyaratan"
+      },
+      {
+        "parent_table": "schools",
+        "child_table": "registrations",
+        "foreign_key": "school_id",
+        "description": "Satu sekolah memiliki banyak pendaftar"
+      },
+      {
+        "parent_table": "study_programs",
+        "child_table": "registrations",
+        "foreign_key": "first_choice_program_id",
+        "description": "Satu program studi dipilih oleh banyak pendaftar sebagai pilihan pertama"
+      },
+      {
+        "parent_table": "study_programs",
+        "child_table": "registrations",
+        "foreign_key": "second_choice_program_id",
+        "description": "Satu program studi dipilih oleh banyak pendaftar sebagai pilihan kedua"
+      },
+      {
+        "parent_table": "registrations",
+        "child_table": "registration_documents",
+        "foreign_key": "registration_id",
+        "description": "Satu pendaftaran memiliki banyak dokumen"
+      },
+      {
+        "parent_table": "registrations",
+        "child_table": "payments",
+        "foreign_key": "registration_id",
+        "description": "Satu pendaftaran memiliki banyak pembayaran"
+      },
+      {
+        "parent_table": "admission_requirements",
+        "child_table": "registration_documents",
+        "foreign_key": "requirement_id",
+        "description": "Satu persyaratan dipenuhi oleh banyak dokumen"
+      },
+      {
+        "parent_table": "registrations",
+        "child_table": "users",
+        "foreign_key": "registration_id",
+        "description": "Satu pendaftaran dapat memiliki satu user account"
+      }
+    ],
+    "many_to_many": [
+      {
+        "table1": "admission_paths",
+        "table2": "study_programs",
+        "junction_table": "admission_path_programs",
+        "description": "Banyak jalur pendaftaran dapat memiliki banyak program studi"
+      }
+    ]
+  },
+  "sample_data": {
+    "universities": [
+      {
+        "id": 1,
+        "name": "Universitas Muhammadiyah Manado",
+        "address": "Jl. Kampus Unimman, Manado, Sulawesi Utara",
+        "phone": "0431-123456",
+        "email": "info@unimman.ac.id",
+        "website": "https://unimman.ac.id",
+        "logo_url": "/assets/logo-unimman.png"
+      }
+    ],
+    "study_programs": [
+      {
+        "id": 1,
+        "code": "D3-FARMASI",
+        "name": "Farmasi",
+        "level": "D3",
+        "accreditation": "Baik Sekali",
+        "quota": 50,
+        "is_active": true
+      },
+      {
+        "id": 2,
+        "code": "S1-FARMASI",
+        "name": "Farmasi",
+        "level": "S1",
+        "accreditation": "Baik Sekali",
+        "quota": 100,
+        "is_active": true
+      },
+      {
+        "id": 3,
+        "code": "S1-KEPERAWATAN",
+        "name": "Keperawatan",
+        "level": "S1",
+        "accreditation": "Baik",
+        "quota": 80,
+        "is_active": true
+      }
+    ],
+    "admission_paths": [
+      {
+        "id": 1,
+        "code": "PMB_KADER_2025",
+        "name": "PMB JALUR KADER MUHAMMADIYAH 2025",
+        "description": "Jalur khusus untuk kader Muhammadiyah",
+        "registration_fee": 0.00,
+        "study_system": "Reguler",
+        "target_students": "Khusus Peserta Didik Baru Non Transfer",
+        "schedule": "Pagi-Sore",
+        "start_date": "2025-01-01",
+        "end_date": "2025-12-31",
+        "wave": "Gelombang 1",
+        "academic_year": "2025",
+        "semester": "GANJIL",
+        "is_active": true
+      },
+      {
+        "id": 2,
+        "code": "PMB_REGULER_2025",
+        "name": "PMB JALUR REGULER 2025",
+        "description": "Jalur pendaftaran reguler",
+        "registration_fee": 300000.00,
+        "study_system": "Reguler",
+        "target_students": "Peserta Didik Baru",
+        "schedule": "Pagi-Sore",
+        "start_date": "2025-02-01",
+        "end_date": "2025-08-31",
+        "wave": "Gelombang 1",
+        "academic_year": "2025",
+        "semester": "GANJIL",
+        "is_active": true
+      }
+    ],
+    "provinces": [
+      {
+        "id": 75,
+        "name": "Sulawesi Utara"
+      },
+      {
+        "id": 11,
+        "name": "Aceh"
+      }
+    ],
+    "cities": [
+      {
+        "id": 7571,
+        "province_id": 75,
+        "name": "Manado"
+      },
+      {
+        "id": 7572,
+        "province_id": 75,
+        "name": "Tomohon"
+      }
+    ],
+    "admission_requirements": [
+      {
+        "id": 1,
+        "admission_path_id": 1,
+        "requirement_name": "Ijazah/Surat Keterangan Lulus",
+        "description": "Scan ijazah atau surat keterangan lulus",
+        "is_mandatory": true,
+        "file_type": "PDF,JPG,PNG",
+        "max_file_size": 2048
+      },
+      {
+        "id": 2,
+        "admission_path_id": 1,
+        "requirement_name": "Transkrip Nilai",
+        "description": "Scan transkrip nilai atau rapor",
+        "is_mandatory": true,
+        "file_type": "PDF,JPG,PNG",
+        "max_file_size": 2048
+      },
+      {
+        "id": 3,
+        "admission_path_id": 1,
+        "requirement_name": "KTP/Kartu Identitas",
+        "description": "Scan KTP atau kartu identitas lainnya",
+        "is_mandatory": true,
+        "file_type": "PDF,JPG,PNG",
+        "max_file_size": 1024
+      },
+      {
+        "id": 4,
+        "admission_path_id": 1,
+        "requirement_name": "Pas Foto",
+        "description": "Pas foto terbaru ukuran 3x4",
+        "is_mandatory": true,
+        "file_type": "JPG,PNG",
+        "max_file_size": 512
+      }
+    ]
+  },
+  "views": {
+    "view_registration_summary": {
+      "description": "View untuk ringkasan pendaftaran",
+      "sql": "CREATE VIEW view_registration_summary AS SELECT r.id, r.registration_number, r.full_name, r.email, r.mobile_number, ap.name as admission_path_name, sp1.name as first_choice_program, sp2.name as second_choice_program, s.name as school_name, r.registration_status, r.payment_status, r.created_at FROM registrations r LEFT JOIN admission_paths ap ON r.admission_path_id = ap.id LEFT JOIN study_programs sp1 ON r.first_choice_program_id = sp1.id LEFT JOIN study_programs sp2 ON r.second_choice_program_id = sp2.id LEFT JOIN schools s ON r.school_id = s.id"
+    },
+    "view_admission_statistics": {
+      "description": "View untuk statistik pendaftaran per jalur",
+      "sql": "CREATE VIEW view_admission_statistics AS SELECT ap.id, ap.name, ap.code, COUNT(r.id) as total_registrations, COUNT(CASE WHEN r.registration_status = 'SUBMITTED' THEN 1 END) as submitted_count, COUNT(CASE WHEN r.payment_status = 'PAID' THEN 1 END) as paid_count FROM admission_paths ap LEFT JOIN registrations r ON ap.id = r.admission_path_id GROUP BY ap.id, ap.name, ap.code"
+    }
+  },
+  "stored_procedures": {
+    "sp_generate_registration_number": {
+      "description": "Stored procedure untuk generate nomor pendaftaran",
+      "parameters": [
+        {
+          "name": "admission_path_id",
+          "type": "INT",
+          "description": "ID jalur pendaftaran"
+        }
+      ],
+      "returns": "VARCHAR(50)",
+      "example": "CALL sp_generate_registration_number(1) -> 'PMB2025010001'"
+    },
+    "sp_get_quota_remaining": {
+      "description": "Stored procedure untuk mendapatkan sisa kuota",
+      "parameters": [
+        {
+          "name": "admission_path_id",
+          "type": "INT",
+          "description": "ID jalur pendaftaran"
+        },
+        {
+          "name": "study_program_id",
+          "type": "INT",
+          "description": "ID program studi"
+        }
+      ],
+      "returns": "INT",
+      "example": "CALL sp_get_quota_remaining(1, 2) -> 45"
+    }
+  },
+  "triggers": {
+    "tr_update_payment_status": {
+      "description": "Trigger untuk update status pembayaran di tabel registrations",
+      "table": "payments",
+      "event": "AFTER UPDATE",
+      "action": "UPDATE registrations SET payment_status = NEW.payment_status WHERE id = NEW.registration_id"
+    },
+    "tr_generate_registration_number": {
+      "description": "Trigger untuk auto-generate nomor pendaftaran",
+      "table": "registrations",
+      "event": "BEFORE INSERT",
+      "action": "SET NEW.registration_number = CONCAT(YEAR(NOW()), LPAD(NEW.admission_path_id, 2, '0'), LPAD((SELECT COUNT(*) + 1 FROM registrations WHERE admission_path_id = NEW.admission_path_id), 4, '0'))"
+    }
+  },
+  "performance_optimization": {
+    "partitioning": {
+      "registrations": {
+        "type": "RANGE",
+        "column": "created_at",
+        "description": "Partisi berdasarkan tahun untuk meningkatkan performa query"
+      }
+    },
+    "caching_strategy": [
+      "Cache data provinces dan cities (jarang berubah)",
+      "Cache data study_programs yang aktif",
+      "Cache admission_paths yang sedang aktif",
+      "Cache announcement yang published"
+    ],
+    "archiving": {
+      "registrations": {
+        "condition": "created_at < DATE_SUB(NOW(), INTERVAL 3 YEAR)",
+        "target_table": "registrations_archive",
+        "description": "Archive pendaftaran yang lebih dari 3 tahun"
+      }
+    }
+  },
+  "backup_strategy": {
+    "full_backup": {
+      "frequency": "Daily",
+      "time": "02:00 AM",
+      "retention": "30 days"
+    },
+    "incremental_backup": {
+      "frequency": "Every 6 hours",
+      "retention": "7 days"
+    },
+    "critical_tables": [
+      "registrations",
+      "payments",
+      "registration_documents",
+      "users"
+    ]
+  },
+  "security_considerations": {
+    "data_encryption": [
+      "nik (Nomor Induk Kependudukan)",
+      "password_hash",
+      "payment information"
+    ],
+    "access_control": {
+      "admin": ["ALL PRIVILEGES"],
+      "operator": ["SELECT", "INSERT", "UPDATE on specific tables"],
+      "student": ["SELECT", "UPDATE on own records only"]
+    },
+    "audit_logging": [
+      "All INSERT/UPDATE/DELETE operations on registrations",
+      "Payment status changes",
+      "Document uploads and verifications",
+      "User login activities"
+    ]
+  }
+}
