@@ -12,6 +12,11 @@ SET time_zone = "+00:00";
 -- TABEL SISTEM AKADEMIK (EXISTING)
 -- =====================================================
 
+
+-- bikin master dari masing-data, seperti negara, agama, prodi, jenjang, sistem kuliah dll (semua kolom yang membutuhkan )
+-- ADMIN PANEL, CRUD DATA MASTER, LAPORAN PENDAFTAR DI SUATU JALUR PER PRODI NYA, UBAH STATUS MAHASISWA SETELAH MENDAFTAR 
+-- TAMBAHKAN CHATBOT BUKAN DARI WA 
+
 -- Tabel Unit (Program Studi, Fakultas, dll)
 CREATE TABLE unit (
     kode_unit VARCHAR(10) NOT NULL PRIMARY KEY,
