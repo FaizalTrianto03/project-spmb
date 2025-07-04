@@ -343,7 +343,7 @@ foreach ($models as $modelName => $namespace) {
     $controllerContent = generateController($modelName, $namespace);
     
     file_put_contents($controllerFile, $controllerContent);
-    echo "✅ Generated: {$controllerFile}\n";
+    echo " Generated: {$controllerFile}\n";
 }
 
 echo "\n🎉 Semua controller berhasil di-generate!\n";
