@@ -95,7 +95,7 @@ const ProgramStudiPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-white">
             {/* Breadcrumb Section */}
             <section className="bg-white border-b py-3">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-24">
@@ -141,39 +141,43 @@ const ProgramStudiPage = () => {
                         <div className="flex flex-col space-y-6">
                             {/* Tab Navigation dengan design yang lebih menarik */}
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                                <div className="flex bg-gray-100 rounded-xl p-1.5 w-fit gap-2">
-                                    <button
-                                        onClick={() => setActiveTab('D3')}
-                                        className={`px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 ${activeTab === 'D3'
-                                                ? 'bg-blue-600 text-white shadow-lg transform scale-105'
+
+                                {/* Pilihan Level Program Studi */}
+                                <div className="bg-gray-100 rounded-xl p-1.5 w-full">
+                                    <div className="flex flex-col sm:flex-row gap-2">
+                                        <button
+                                            onClick={() => setActiveTab('D3')}
+                                            className={`w-full sm:w-auto px-4 sm:px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-center ${activeTab === 'D3'
+                                                ? 'bg-blue-600 text-white shadow-lg'
                                                 : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
-                                            }`}
-                                    >
-                                        D3 - Diploma 3
-                                    </button>
-                                    <button
-                                        onClick={() => setActiveTab('S1')}
-                                        className={`px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 ${activeTab === 'S1'
-                                                ? 'bg-blue-600 text-white shadow-lg transform scale-105'
+                                                }`}
+                                        >
+                                            D3 - Diploma 3
+                                        </button>
+                                        <button
+                                            onClick={() => setActiveTab('S1')}
+                                            className={`w-full sm:w-auto px-4 sm:px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-center ${activeTab === 'S1'
+                                                ? 'bg-blue-600 text-white shadow-lg'
                                                 : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
-                                            }`}
-                                    >
-                                        S1 - Strata 1
-                                    </button>
-                                    <button
-                                        onClick={() => setActiveTab('PROFESI')}
-                                        className={`px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 ${activeTab === 'PROFESI'
-                                                ? 'bg-blue-600 text-white shadow-lg transform scale-105'
+                                                }`}
+                                        >
+                                            S1 - Strata 1
+                                        </button>
+                                        <button
+                                            onClick={() => setActiveTab('PROFESI')}
+                                            className={`w-full sm:w-auto px-4 sm:px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-center ${activeTab === 'PROFESI'
+                                                ? 'bg-blue-600 text-white shadow-lg'
                                                 : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
-                                            }`}
-                                    >
-                                        Prof - Profesi
-                                    </button>
+                                                }`}
+                                        >
+                                            Prof - Profesi
+                                        </button>
+                                    </div>
                                 </div>
 
 
                                 {/* Search Box dengan design yang lebih menarik */}
-                                <div className="relative flex-1 max-w-md">
+                                <div className="relative w-full lg:w-auto lg:min-w-[350px] xl:min-w-[400px]">
                                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -200,17 +204,21 @@ const ProgramStudiPage = () => {
                             </div>
 
                             {/* Info Bar */}
-                            <div className="flex items-center justify-between text-sm text-gray-600 bg-gray-50 rounded-lg p-4">
-                                <span className="flex items-center gap-2">
+                            <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-600 bg-gray-50 rounded-lg p-4">
+                                <span className="flex items-center gap-2 mb-2 md:mb-0">
                                     <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                                     </svg>
-                                    Menampilkan program studi jenjang <span className="font-semibold text-gray-900">{activeTab}</span>
+                                    <span>
+                                        Menampilkan program studi jenjang
+                                        <span className="font-semibold text-gray-900 rounded-md px-1">{activeTab}</span>
+                                    </span>
                                 </span>
                                 <span className="font-semibold text-blue-600">
                                     {filteredPrograms.length} Program Tersedia
                                 </span>
                             </div>
+
                         </div>
                     </div>
 

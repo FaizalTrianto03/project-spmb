@@ -104,7 +104,7 @@ const InformasiPage = () => {
                 const sortedData = manualData
                     .filter(item => item.is_active)
                     .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-                
+
                 setInformasiData(sortedData);
                 setLoading(false);
             }, 800);
@@ -180,11 +180,11 @@ const InformasiPage = () => {
             'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
             'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
         ];
-        
+
         const day = date.getDate();
         const month = months[date.getMonth()];
         const year = date.getFullYear();
-        
+
         return `${day} ${month} ${year}`;
     };
 
@@ -196,7 +196,7 @@ const InformasiPage = () => {
         const date = new Date(dateString);
         const diffTime = Math.abs(now - date);
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-        
+
         if (diffDays === 0) return 'Hari ini';
         if (diffDays === 1) return 'Kemarin';
         if (diffDays < 7) return `${diffDays} hari yang lalu`;
@@ -217,7 +217,7 @@ const InformasiPage = () => {
                                 className="hover:text-blue-600 transition-colors duration-200 flex items-center gap-1"
                             >
                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                                 </svg>
                                 Beranda
                             </button>
@@ -262,16 +262,15 @@ const InformasiPage = () => {
                             {/* Filter Controls */}
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                                 {/* Tab Navigation */}
-                                <div className="flex bg-gray-100 rounded-xl p-1.5 w-fit gap-2">
+                                <div className="flex flex-col sm:flex-row gap-2">
                                     {['SEMUA', 'Informasi', 'Pengumuman'].map((tab) => (
                                         <button
                                             key={tab}
                                             onClick={() => setActiveTab(tab)}
-                                            className={`px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 ${
-                                                activeTab === tab
+                                            className={`px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 ${activeTab === tab
                                                     ? 'bg-blue-600 text-white shadow-lg transform scale-105'
                                                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
-                                            }`}
+                                                }`}
                                         >
                                             {tab === 'SEMUA' ? 'Semua' : tab}
                                         </button>
@@ -382,31 +381,30 @@ const InformasiPage = () => {
                                             </div>
 
                                             {/* Type Badge */}
-                                            <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold z-20 shadow-lg ${
-                                                item.type === 'Informasi'
+                                            <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold z-20 shadow-lg ${item.type === 'Informasi'
                                                     ? 'bg-white/20 text-white backdrop-blur-sm'
                                                     : 'bg-yellow-400 text-blue-900'
-                                            }`}>
+                                                }`}>
                                                 {item.type}
                                             </div>
 
                                             {/* Logo */}
                                             <div className="relative z-10 transition-transform duration-300 group-hover:scale-110">
-                                               <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/30 shadow-xl">
-                                            <img
-                                                src="/assets/logo.png"
-                                                alt="Logo UNIMMAN"
-                                                className="w-16 h-16 lg:w-20 lg:h-20 object-contain drop-shadow-lg"
-                                                onError={(e) => {
-                                                    e.target.style.display = 'none';
-                                                    e.target.parentNode.innerHTML = `
+                                                <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/30 shadow-xl">
+                                                    <img
+                                                        src="/assets/logo.png"
+                                                        alt="Logo UNIMMAN"
+                                                        className="w-16 h-16 lg:w-20 lg:h-20 object-contain drop-shadow-lg"
+                                                        onError={(e) => {
+                                                            e.target.style.display = 'none';
+                                                            e.target.parentNode.innerHTML = `
                                                             <div class="w-16 h-16 lg:w-20 lg:h-20 bg-white/20 rounded-full flex items-center justify-center shadow-xl">
                                                                 <span class="text-white font-bold text-xl lg:text-2xl">U</span>
                                                             </div>
                                                         `;
-                                                }}
-                                            />
-                                        </div>
+                                                        }}
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
 
@@ -414,11 +412,10 @@ const InformasiPage = () => {
                                         <div className="flex-1 p-6 flex flex-col justify-between min-h-0 bg-white">
                                             <div className="flex-1">
                                                 <div className="flex items-center gap-3 mb-3 flex-wrap">
-                                                    <div className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                                                        item.type === 'Informasi'
+                                                    <div className={`px-3 py-1 rounded-full text-sm font-semibold ${item.type === 'Informasi'
                                                             ? 'bg-blue-100 text-blue-600'
                                                             : 'bg-yellow-100 text-yellow-600'
-                                                    }`}>
+                                                        }`}>
                                                         {item.type}
                                                     </div>
                                                     <div className="h-1 w-1 bg-gray-300 rounded-full"></div>
